@@ -3,74 +3,78 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class Card : MonoBehaviour
+namespace Jesus.Cards
 {
-	public CardSO cardInfo;
-
-	[Header("Components")]
-	public GameObject cardBase;
-
-	public Text nameText;
-	public Image cardImage;
-	public Text healthText;
-	public Text damageText;
-	public Image buffImage;
-
-	private void Start()
+	public class Card : MonoBehaviour
 	{
-		ChangeName(cardInfo.cardName);
-		PopulateCard();
-		ChangeRarity(cardInfo.rarity);
-	}
+		public CardSO cardInfo;
 
+		[Header("Components")]
+		public GameObject cardBase;
 
+		public Text nameText;
+		public Image cardImage;
+		public Text healthText;
+		public Text damageText;
+		public Image buffImage;
 
-	private void ChangeName(string newName)
-	{
-		name = newName;
-	}
-
-	private void PopulateCard()
-	{
-		nameText.text = cardInfo.cardName;
-		cardImage.sprite = cardInfo.cardPicture;
-		healthText.text = cardInfo.health.ToString();
-		damageText.text = cardInfo.damage.ToString();
-		//buffImage = 
-	}
-
-	private void EmptyCard()
-	{
-		nameText.text = "";
-		cardImage.sprite = null;
-		healthText.text = "";
-		damageText.text = "";
-	}
-
-	private void ChangeRarity(Rarity rarity)
-	{
-		Material mat = cardBase.GetComponent<Renderer>().material;
-
-
-		if (rarity == Rarity.Common)
+		private void Start()
 		{
-			mat.color = Color.grey;
+			ChangeName(cardInfo.name);
+			PopulateCard();
+			ChangeRarity(cardInfo.rarity);
 		}
-		else if (rarity == Rarity.Rare)
+
+
+
+		private void ChangeName(string newName)
 		{
-			mat.color = Color.cyan;
+			name = newName;
+		}
+
+		private void PopulateCard()
+		{
+			nameText.text = cardInfo.name;
+			cardImage.sprite = cardInfo.image;
+			healthText.text = cardInfo.health.ToString();
+			damageText.text = cardInfo.damage.ToString();
+			//buffImage = 
+		}
+
+		private void EmptyCard()
+		{
+			nameText.text = "";
+			cardImage.sprite = null;
+			healthText.text = "";
+			damageText.text = "";
+		}
+
+		public void PickCard(Card card)
+		{
 
 		}
-		else if (rarity == Rarity.SuperRare)
-		{
-			mat.color = Color.yellow;
 
+
+
+		private void ChangeRarity(Rarity rarity)
+		{
+			Material mat = cardBase.GetComponent<Renderer>().material;
+
+
+			if (rarity == Rarity.Common)
+			{
+				mat.color = Color.grey;
+			}
+			else if (rarity == Rarity.Rare)
+			{
+				mat.color = Color.cyan;
+
+			}
+			else if (rarity == Rarity.SuperRare)
+			{
+				mat.color = Color.yellow;
+
+			}
 		}
 	}
-
-
-
-
-
-
 }
