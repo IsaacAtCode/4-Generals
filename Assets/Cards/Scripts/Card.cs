@@ -7,7 +7,7 @@ namespace Jesus.Cards
 {
 	public class Card : MonoBehaviour
 	{
-		public CardSO cardInfo;
+		//public CardSO cardInfo;
 
 		[Header("Components")]
 		public GameObject cardBase;
@@ -32,13 +32,15 @@ namespace Jesus.Cards
 			name = newName;
 		}
 
-		private void PopulateCard()
+		public void PopulateCard(CardSO cardInfo)
 		{
 			nameText.text = cardInfo.name;
 			cardImage.sprite = cardInfo.image;
 			healthText.text = cardInfo.health.ToString();
 			damageText.text = cardInfo.damage.ToString();
-			//buffImage = 
+            //buffImage = 
+
+            ChangeRarity(cardInfo.rarity);
 		}
 
 		private void EmptyCard()
