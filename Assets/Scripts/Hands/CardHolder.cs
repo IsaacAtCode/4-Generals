@@ -12,7 +12,6 @@ namespace Jesus.Cards
         public Hand leftHand; //Deck hand
         public GameObject handMiddle_L;
 
-
         [Header("Right Hand - Selection")]
 		public Hand rightHand;
 		public GameObject handMiddle_R;
@@ -22,8 +21,10 @@ namespace Jesus.Cards
 
         [Header("Deck")]
         public Deck deck;
-        private List<GameObject> cards;
+        public List<GameObject> cards;
+        private GameObject playerDeck;
         public GameObject blankCard;
+        public float widthOfHand;
 
 		public GameObject cardToSpawn;
 
@@ -42,13 +43,20 @@ namespace Jesus.Cards
 
 			cardInHand_R = SpawnCard(handMiddle_R, cardToSpawn);
 
-            deck = CreateDeck();
+            if (deck == null)
+            {
+                deck = CreateDeck();
+            }
+
+            ShowDeck();
+
+
 
 		}
 
 		private void Update()
 		{
-			GetHand();
+            GetHand();
 
 			if (controller.IsConnected)
 			{
@@ -56,9 +64,38 @@ namespace Jesus.Cards
 				Frame previous = controller.Frame(1);
 			}
 
+
+
+
             float handDistance = 3 / (Vector3.Distance(handMiddle_R.transform.position, mainCamera.transform.position));
             float newDist = Mathf.Clamp(handDistance, 0.5f, 2f);
             cardInHand_R.transform.localScale = new Vector3(newDist, newDist, newDist);
+
+
+
+            if (isDeckShown())
+            {
+               LookAtPlayer();
+            }
+
+
+
+
+
+            if (Input.GetKeyDown(KeyCode.O))
+            {
+                if (isDeckShown())
+                {
+                    HideDeck();
+                }
+                else if (!isDeckShown())
+                {
+                    ShowDeck();
+                }
+
+            }
+
+
         }
 
 
@@ -83,40 +120,113 @@ namespace Jesus.Cards
         private Deck CreateDeck()
         {
             Deck newDeck = new Deck();
-
-            RefreshDeck();
-
             return newDeck;
         }
 
-
-        public void RefreshDeck()
+        public void ShowDeck()
         {
-            //CLearDeck
+            handMiddle_L.SetActive(true);
+            cards = GenerateCards(deck);
+            SeperateCards(widthOfHand);
+        }
 
-            PopulateDeck(deck);
+        public void HideDeck()
+        {
+            Destroy(playerDeck);
+            handMiddle_L.SetActive(false);
         }
 
 
-        private void PopulateDeck(Deck deck)
+        public List<GameObject> GenerateCards(Deck deck)
         {
+
+            List<GameObject> cardGOs = new List<GameObject>();
+            playerDeck = new GameObject("Deck");
+            playerDeck.transform.parent = handMiddle_L.transform;
+            playerDeck.transform.position = handMiddle_L.transform.position;
+
+            Vector3 parentVector = new Vector3(playerDeck.transform.position.x, playerDeck.transform.position.y, playerDeck.transform.position.z);
+
+
             foreach (CardSO cardInfo in deck.cards)
             {
-                CreateCard(cardInfo);
+                GameObject cardGO = Instantiate(blankCard, parentVector, Quaternion.identity, playerDeck.transform);
+                cardGOs.Add(cardGO);
+                cardGO.transform.localScale = new Vector3(0.75f, 0.75f * 0.1f, 0.75f);
+
+                Card card = cardGO.AddComponent<Card>();
+                card.PopulateCard(cardInfo);
+            }
+
+            return cardGOs;
+        }
+
+        //private void SeperateCards()
+        //{
+
+        //    int cardsToSpawn = cards.Count;
+        //    float widthOfAllCards = 0;
+
+        //    foreach (GameObject card in cards)
+        //    {
+        //        widthOfAllCards += card.transform.localScale.x;
+        //    }
+
+        //    float averageWidth = widthOfAllCards / cards.Count;
+        //    float padding = averageWidth * 0.25f;
+        //    float totalWidth = widthOfAllCards + (cards.Count) * padding;
+
+        //    for (int i = 0; i < cards.Count; i++)
+        //    {
+        //        float placement = i * (totalWidth / cards.Count) - totalWidth / 2;
+        //        cards[i].transform.position += new Vector3(placement, 0, 0);
+        //    }
+        //}
+
+        private void SeperateCards(float maxWidth)
+        {
+            float widthOfCard = (4 * maxWidth) / (5 * cards.Count);
+
+            foreach (GameObject card in cards)
+            {
+                card.transform.localScale = new Vector3(widthOfCard, widthOfCard * 0.1f, widthOfCard);
+            }
+
+            for (int i = 0; i < cards.Count; i++)
+            {
+                float placement = i * (maxWidth / cards.Count) - maxWidth / 2;
+                cards[i].transform.position += new Vector3(placement, 0, 0);
             }
         }
 
-        private void CreateCard(CardSO cardInfo)
+        private void AverageY()
         {
-            GameObject cardGO = Instantiate(blankCard);
-            Card card = cardGO.AddComponent<Card>();
-            card.PopulateCard(cardInfo);
 
         }
 
+        private void LookAtPlayer()
+        {
+            foreach (GameObject card in cards)
+            {
+                Vector3 camPos = mainCamera.transform.position;
+                Vector3 lookVector = camPos - card.transform.position;
+                lookVector.y = card.transform.position.y + 5;
+                Quaternion rot = Quaternion.LookRotation(lookVector);
+                card.transform.rotation = Quaternion.Slerp(card.transform.rotation, rot, 1);
+            }
+        }
 
-
-
+        private bool isDeckShown()
+        {
+            if (handMiddle_L.activeSelf)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
 
 
         #endregion

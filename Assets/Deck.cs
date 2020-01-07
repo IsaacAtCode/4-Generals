@@ -4,9 +4,11 @@ using UnityEngine;
 
 namespace Jesus.Cards
 {
+    [ExecuteInEditMode]
     public class Deck : MonoBehaviour
     {
         public List<CardSO> cards;
+        public bool createNewDeck = false;
 
         private void Start()
         {
