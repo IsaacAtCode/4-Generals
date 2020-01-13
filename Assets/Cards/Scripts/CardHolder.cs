@@ -3,33 +3,32 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using Leap;
+using Jesus.Cards;
 
-namespace Jesus.Cards
+namespace Jesus.Hands
 {
     [RequireComponent(typeof(CardDeck))]
     [RequireComponent(typeof(CardHand))]
 	public class CardHolder : MonoBehaviour
 	{
         //Left Hand
-        public CardDeck leftHand;
+        public CardDeck deckHand;
+        private int layer = 10;
+        private int layermask = 1 << 10;
 
         //Right Hand
-        public CardHand rightHand;
+        public CardHand selectionHand;
+        public Card selectedCard;
 
-        [Header("Hand Detection")]
-		public Controller controller;
+        public Controller controller;
 		public Frame frame;
-
-		[Header("Other")]
-        public GameObject blankCard;
-        public Camera mainCamera;
 
 		private void Start()
 		{
 			controller = new Controller();
 
-            leftHand = GetComponent<CardDeck>();
-            rightHand = GetComponent<CardHand>();
+            deckHand = GetComponent<CardDeck>();
+            selectionHand = GetComponent<CardHand>();
 		}
 
 		private void Update()
@@ -42,7 +41,14 @@ namespace Jesus.Cards
                 Frame previous = controller.Frame(1);
             }
 
+            if (Input.GetKeyDown(KeyCode.H) && selectionHand.cardInHandGO != null)
+            {
+                SwapCards(selectedCard.cardInfo);
+            }
 
+
+            SelectCardFromDeck();
+             
 		}
 
 
@@ -50,17 +56,56 @@ namespace Jesus.Cards
 		{
 			foreach (Hand hand in frame.Hands)
 			{
+                if (hand.IsLeft)
+                {
+                    deckHand.hand = hand;
+                }
                 if (hand.IsRight)
                 {
-                    rightHand.hand = hand;
+                    selectionHand.hand = hand;
                 }
-				if (hand.IsLeft)
-				{
-                    leftHand.hand = hand;
-				}
+
 			}
 		}
 
-	}
+        //AddToDeck
+
+        //AddtoHand
+
+        public void SwapCards(CardSO cardInDeck)
+        {
+            CardSO cardInHand = selectionHand.cardInHandInfo;
+
+            selectionHand.EmptyHand();
+            deckHand.RemoveCard(cardInDeck);
+
+            selectionHand.SpawnCard(cardInDeck);
+            deckHand.AddCard(cardInHand);
+        }
+
+        public void SelectCardFromDeck()
+        {
+            //RaycastHit hit;
+
+
+            //Debug.DrawRay(selectionHand.indexPos.position, selectionHand.indexPos.forward, Color.red);
+
+            //if (Physics.Raycast(selectionHand.indexPos.position, selectionHand.indexPos.forward, out hit, Mathf.Infinity, ~layermask) && hit.transform.tag == "Card")
+            //{
+            //    Debug.Log(hit.transform.tag);
+
+            //    selectedCard = hit.transform.gameObject.GetComponent<Card>();
+            //    if (selectedCard.inDeck)
+            //    {
+            //        selectedCard.ScaleCard(1f);
+            //    }
+            //}
+
+        }
+
+
+
+
+    }
 
 }

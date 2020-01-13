@@ -2,8 +2,9 @@
 using System.Collections.Generic;
 using UnityEngine;
 using Leap;
+using Jesus.Cards;
 
-namespace Jesus.Cards
+namespace Jesus.Hands
 {
     //Scripts related to the left Hand
     public class CardDeck : MonoBehaviour
@@ -46,6 +47,12 @@ namespace Jesus.Cards
                 DrawCard();
             }
 
+            if (Input.GetKeyDown(KeyCode.K))
+            {
+                RemoveCard(0);
+            }
+
+
             if (isDirty)
             {
                 RefreshDeck();
@@ -71,8 +78,28 @@ namespace Jesus.Cards
 
         public void RemoveCard(CardSO card)
         {
-            cards.Remove(card);
-            isDirty = true;
+            if (cards.Count >= 1)
+            {
+                cards.Remove(card);
+                isDirty = true;
+            }
+            else if (cards.Count <= 0)
+            {
+                Debug.Log("No Cards to remove");
+            }
+        }
+
+        public void RemoveCard(int number)
+        {
+            if (cards.Count >= 1)
+            {
+                cards.RemoveAt(number);
+                isDirty = true;
+            }
+            else if (cards.Count <= 0)
+            {
+                Debug.Log("No Cards to remove");
+            }
         }
 
         public void SwapCard(CardSO cardInDeck, CardSO cardInHand)
@@ -84,15 +111,22 @@ namespace Jesus.Cards
 
         public void DrawCard()
         {
-            if (cards.Count <= maxCards - 1)
+            if (drawPile.Count > 0)
             {
-                CardSO drawnCard = drawPile[Random.Range(0, drawPile.Count)];
-                drawPile.Remove(drawnCard);
-                AddCard(drawnCard);
+                if (cards.Count <= maxCards - 1)
+                {
+                    CardSO drawnCard = drawPile[Random.Range(0, drawPile.Count)];
+                    drawPile.Remove(drawnCard);
+                    AddCard(drawnCard);
+                }
+                else
+                {
+                    Debug.Log("Cannot draw any more");
+                }
             }
             else
             {
-                Debug.Log("Cannot draw any more");
+                Debug.Log("Drawn All Cards");
             }
         }
 
@@ -134,11 +168,13 @@ namespace Jesus.Cards
             foreach (CardSO cardInfo in cards)
             {
                 GameObject cardGO = Instantiate(blankCard, parentVector, Quaternion.identity, playerDeck.transform);
+                cardGO.tag = "Card";
                 cardGOs.Add(cardGO);
                 cardGO.transform.localScale = new Vector3(0.75f, 0.75f * 0.1f, 0.75f);
 
                 Card card = cardGO.AddComponent<Card>();
-                card.PopulateCard(cardInfo);
+                card.cardInfo = cardInfo;
+                card.PopulateCard();
                 card.inDeck = true;
             }
 
@@ -178,7 +214,13 @@ namespace Jesus.Cards
             }
         }
 
-
+        public void ShrinkCards()
+        {
+            foreach (GameObject card in cardObjects)
+            {
+                card.GetComponent<Card>().ScaleCard(0.75f);
+            }
+        }
 
 
         private bool isDeckShown()

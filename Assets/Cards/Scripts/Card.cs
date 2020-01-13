@@ -7,7 +7,7 @@ namespace Jesus.Cards
 {
 	public class Card : MonoBehaviour
 	{
-		//public CardSO cardInfo;
+		public CardSO cardInfo;
 
 		[Header("Components")]
         public Text nameText;
@@ -17,7 +17,6 @@ namespace Jesus.Cards
         public Image buffImage;
 
         [Header("Statistics")]
-        private Vector3 startingSize;
         public int currentHealth;
         public int currentDamage;
 
@@ -38,13 +37,10 @@ namespace Jesus.Cards
                 cardImage = transform.GetChild(0).GetChild(3).GetComponent<Image>();
                 buffImage = transform.GetChild(0).GetChild(4).GetComponent<Image>();
             }
-
-            startingSize = transform.localScale;
-            //Debug.Log(startingSize);
-				
+			
 		}
 
-		public void PopulateCard(CardSO cardInfo)
+		public void PopulateCard()
 		{
 			GetComponents();
 
@@ -66,14 +62,9 @@ namespace Jesus.Cards
 			damageText.text = "";
 		}
 
-        public void ExpandCard(float size)
+        public void ScaleCard(float size)
         {
-            transform.localScale = new Vector3(size, size, size);
-        }
-
-        public void ShrinkCard()
-        {
-            transform.localScale = startingSize;
+            transform.localScale = new Vector3(size, size * 0.1f, size);
         }
 
         public void TakeDamage(int damage)
@@ -90,8 +81,6 @@ namespace Jesus.Cards
         {
             Destroy(this.gameObject);
         }
-
-
 
         private void ChangeName(string newName)
 		{

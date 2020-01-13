@@ -72,6 +72,14 @@ namespace Jesus.Cards
             }
             return cardToAdd;
         }
+
+        public CardSO RandomCard()
+        {
+            Rarity rarity = (Rarity)Random.Range(0, 2);
+            return AddCard(rarity);
+        }
+
+
     }
 
 

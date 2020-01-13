@@ -2,49 +2,64 @@
 using System.Collections.Generic;
 using UnityEngine;
 using Leap;
+using Jesus.Cards;
 
-namespace Jesus.Cards
+namespace Jesus.Hands
 {
     //Scripts related to the right Hand
     public class CardHand : MonoBehaviour
     {
         public Hand hand;
         public GameObject anchor;
-        private bool isHandFull;
+        public Transform indexPos;
+
+        [Header("Card in Hand")]
+        public GameObject cardInHandGO;
+        public CardSO cardInHandInfo;
 
         [Header("Other")]
         public GameObject blankCard;
+        public GameObject mainCamera;
 
-        private void RightHandRayCast()
+        private void Update()
         {
+            if (Input.GetKeyDown(KeyCode.O))
+            {
+                SpawnCard(GetComponent<CardHolder>().selectedCard.cardInfo);
+            }
+            if (Input.GetKeyDown(KeyCode.P))
+            {
+                EmptyHand();
+            }
+
+
+            if (cardInHandGO)
+            {
+                Vector3 targetPos = mainCamera.transform.position;
+
+                cardInHandGO.transform.LookAt(targetPos);
+                cardInHandGO.transform.Rotate(-90, 0, 0);
+            }           
 
         }
 
 
-        public void SelectCardFromDeck()
-        {
-            if (isHandFull)
-            {
-                //Swap Card
-            }
-            else if (!isHandFull)
-            {
-                //SelectCard
-            }
-        }
 
 
         public void SpawnCard(CardSO cardInfo)
         {
-            if (!isHandFull)
+            if (!cardInHandGO)
             {
-                GameObject cardGO = Instantiate(blankCard, anchor.transform.position, Quaternion.identity, anchor.transform);
-                cardGO.name = cardInfo.name;
-                Card card = cardGO.AddComponent<Card>();
-                card.PopulateCard(cardInfo);
-                card.inDeck = true;
+                cardInHandGO = Instantiate(blankCard, anchor.transform.position, Quaternion.identity, anchor.transform);
+                cardInHandGO.name = cardInfo.name;
+                cardInHandGO.tag = "Card";
+                cardInHandGO.layer = 10;
+                Card card = cardInHandGO.AddComponent<Card>();
+                card.cardInfo = cardInfo;
+                card.PopulateCard();
 
-                isHandFull = true;
+                cardInHandInfo = cardInfo;
+
             }
             else
             {
@@ -54,8 +69,17 @@ namespace Jesus.Cards
 
         public void EmptyHand()
         {
-
+            if (cardInHandGO)
+            {
+                Destroy(cardInHandGO);
+            }
+            else
+            {
+                Debug.Log("Nothing to destroy");
+            }
+            
         }
+
 
     }
 }
