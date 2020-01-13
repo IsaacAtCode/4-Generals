@@ -10,33 +10,33 @@ namespace Jesus.Cards
 		public CardSO cardInfo;
 
 		[Header("Components")]
-        public Text nameText;
-        public Image cardImage;
-        public Text healthText;
-        public Text damageText;
-        public Image buffImage;
+		public Text nameText;
+		public Image cardImage;
+		public Text healthText;
+		public Text damageText;
+		public Image buffImage;
 
-        [Header("Statistics")]
-        public int currentHealth;
-        public int currentDamage;
+		[Header("Statistics")]
+		public int currentHealth;
+		public int currentDamage;
 
-        public bool inDeck;
+		public bool inDeck;
 
-        private void Start()
-        {
-            GetComponents();
-        }
-
-        private void GetComponents()
+		private void Start()
 		{
-            if (transform.GetChild(0).childCount > 0)
-            {
-                nameText = transform.GetChild(0).GetChild(0).GetComponent<Text>();
-                healthText = transform.GetChild(0).GetChild(1).GetComponent<Text>();
-                damageText = transform.GetChild(0).GetChild(2).GetComponent<Text>();
-                cardImage = transform.GetChild(0).GetChild(3).GetComponent<Image>();
-                buffImage = transform.GetChild(0).GetChild(4).GetComponent<Image>();
-            }
+			GetComponents();
+		}
+
+		private void GetComponents()
+		{
+			if (transform.GetChild(0).childCount > 0)
+			{
+				nameText = transform.GetChild(0).GetChild(0).GetComponent<Text>();
+				healthText = transform.GetChild(0).GetChild(1).GetComponent<Text>();
+				damageText = transform.GetChild(0).GetChild(2).GetComponent<Text>();
+				cardImage = transform.GetChild(0).GetChild(3).GetComponent<Image>();
+				buffImage = transform.GetChild(0).GetChild(4).GetComponent<Image>();
+			}
 			
 		}
 
@@ -62,27 +62,27 @@ namespace Jesus.Cards
 			damageText.text = "";
 		}
 
-        public void ScaleCard(float size)
-        {
-            transform.localScale = new Vector3(size, size * 0.1f, size);
-        }
+		public void ScaleCard(float size)
+		{
+			transform.localScale = new Vector3(size, size * 0.1f, size);
+		}
 
-        public void TakeDamage(int damage)
-        {
-            currentHealth -= damage;
+		public void TakeDamage(int damage)
+		{
+			currentHealth -= damage;
 
-            if (currentHealth <= 0)
-            {
-                DestroyCard();
-            }
-        }
+			if (currentHealth <= 0)
+			{
+				DestroyCard();
+			}
+		}
 
-        public void DestroyCard()
-        {
-            Destroy(this.gameObject);
-        }
+		public void DestroyCard()
+		{
+			Destroy(this.gameObject);
+		}
 
-        private void ChangeName(string newName)
+		private void ChangeName(string newName)
 		{
 			name = newName;
 		}
@@ -112,7 +112,7 @@ namespace Jesus.Cards
 
 public enum CardSize
 {
-    Small,
-    Medium,
-    Large,
+	Small,
+	Medium,
+	Large,
 }
