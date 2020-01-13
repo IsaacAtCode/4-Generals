@@ -4,35 +4,37 @@ using UnityEngine;
 
 namespace Jesus.Cards
 {
-    [ExecuteInEditMode]
-    public class Deck : MonoBehaviour
-    {
-        public List<CardSO> cards;
-        public bool createNewDeck = false;
+	[ExecuteInEditMode]
+	public class Deck : MonoBehaviour
+	{
+		public List<CardSO> cards;
+		public bool createNewDeck = false;
 
-        private void Start()
-        {
-            if (cards == null)
-            {
-                cards = CreateDeck();
-            }
-        }
+		public int maxCards = 5;
 
-        public List<CardSO> CreateDeck()
-        {
-            List<CardSO> newDeck = new List<CardSO>();
+		private void Start()
+		{
+			if (cards == null)
+			{
+				cards = CreateDeck();
+			}
+		}
 
-            return newDeck;
-        }
+		public List<CardSO> CreateDeck()
+		{
+			List<CardSO> newDeck = new List<CardSO>();
 
-        public void AddCard(CardSO card)
-        {
-            cards.Add(card);
-        }
+			return newDeck;
+		}
 
-        public void RemoveCard(CardSO card)
-        {
-            cards.Remove(card);
-        }
-    }
+		public void AddCard(CardSO card)
+		{
+			cards.Add(card);
+		}
+
+		public void RemoveCard(CardSO card)
+		{
+			cards.Remove(card);
+		}
+	}
 }

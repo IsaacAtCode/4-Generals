@@ -18,33 +18,33 @@ namespace Jesus.Cards
 		public Text damageText;
 		public Image buffImage;
 
-        private void GetComponents()
-        {
-            cardBase = this.gameObject;
+		private void GetComponents()
+		{
+			cardBase = this.gameObject;
 
-            nameText = cardBase.transform.GetChild(0).GetChild(0).GetComponent<Text>();
-            healthText = cardBase.transform.GetChild(0).GetChild(1).GetComponent<Text>();
-            damageText = cardBase.transform.GetChild(0).GetChild(2).GetComponent<Text>();
-            cardImage = cardBase.transform.GetChild(0).GetChild(3).GetComponent<Image>();
-            buffImage = cardBase.transform.GetChild(0).GetChild(4).GetComponent<Image>();
-                
-        }
+			nameText = cardBase.transform.GetChild(0).GetChild(0).GetComponent<Text>();
+			healthText = cardBase.transform.GetChild(0).GetChild(1).GetComponent<Text>();
+			damageText = cardBase.transform.GetChild(0).GetChild(2).GetComponent<Text>();
+			cardImage = cardBase.transform.GetChild(0).GetChild(3).GetComponent<Image>();
+			buffImage = cardBase.transform.GetChild(0).GetChild(4).GetComponent<Image>();
+				
+		}
 
 
 
 
 		public void PopulateCard(CardSO cardInfo)
 		{
-            GetComponents();
+			GetComponents();
 
 			nameText.text = cardInfo.name;
 			cardImage.sprite = cardInfo.image;
 			healthText.text = cardInfo.health.ToString();
 			damageText.text = cardInfo.damage.ToString();
-            //buffImage = 
+			//buffImage = 
 
-            ChangeName(cardInfo.name);
-            ChangeRarity(cardInfo.rarity);
+			ChangeName(cardInfo.name);
+			ChangeRarity(cardInfo.rarity);
 		}
 
 		private void EmptyCard()
@@ -55,12 +55,12 @@ namespace Jesus.Cards
 			damageText.text = "";
 		}
 
-        private void ChangeName(string newName)
-        {
-            name = newName;
-        }
+		private void ChangeName(string newName)
+		{
+			name = newName;
+		}
 
-        private void ChangeRarity(Rarity rarity)
+		private void ChangeRarity(Rarity rarity)
 		{
 			Material mat = cardBase.GetComponent<Renderer>().material;
 
