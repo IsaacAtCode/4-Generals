@@ -10,28 +10,39 @@ namespace Jesus.Cards
 		//public CardSO cardInfo;
 
 		[Header("Components")]
-		public GameObject cardBase;
+        public Text nameText;
+        public Image cardImage;
+        public Text healthText;
+        public Text damageText;
+        public Image buffImage;
 
-		public Text nameText;
-		public Image cardImage;
-		public Text healthText;
-		public Text damageText;
-		public Image buffImage;
+        [Header("Statistics")]
+        private Vector3 startingSize;
+        public int currentHealth;
+        public int currentDamage;
 
-		private void GetComponents()
+        public bool inDeck;
+
+        private void Start()
+        {
+            GetComponents();
+        }
+
+        private void GetComponents()
 		{
-			cardBase = this.gameObject;
+            if (transform.GetChild(0).childCount > 0)
+            {
+                nameText = transform.GetChild(0).GetChild(0).GetComponent<Text>();
+                healthText = transform.GetChild(0).GetChild(1).GetComponent<Text>();
+                damageText = transform.GetChild(0).GetChild(2).GetComponent<Text>();
+                cardImage = transform.GetChild(0).GetChild(3).GetComponent<Image>();
+                buffImage = transform.GetChild(0).GetChild(4).GetComponent<Image>();
+            }
 
-			nameText = cardBase.transform.GetChild(0).GetChild(0).GetComponent<Text>();
-			healthText = cardBase.transform.GetChild(0).GetChild(1).GetComponent<Text>();
-			damageText = cardBase.transform.GetChild(0).GetChild(2).GetComponent<Text>();
-			cardImage = cardBase.transform.GetChild(0).GetChild(3).GetComponent<Image>();
-			buffImage = cardBase.transform.GetChild(0).GetChild(4).GetComponent<Image>();
+            startingSize = transform.localScale;
+            //Debug.Log(startingSize);
 				
 		}
-
-
-
 
 		public void PopulateCard(CardSO cardInfo)
 		{
@@ -55,14 +66,41 @@ namespace Jesus.Cards
 			damageText.text = "";
 		}
 
-		private void ChangeName(string newName)
+        public void ExpandCard(float size)
+        {
+            transform.localScale = new Vector3(size, size, size);
+        }
+
+        public void ShrinkCard()
+        {
+            transform.localScale = startingSize;
+        }
+
+        public void TakeDamage(int damage)
+        {
+            currentHealth -= damage;
+
+            if (currentHealth <= 0)
+            {
+                DestroyCard();
+            }
+        }
+
+        public void DestroyCard()
+        {
+            Destroy(this.gameObject);
+        }
+
+
+
+        private void ChangeName(string newName)
 		{
 			name = newName;
 		}
 
 		private void ChangeRarity(Rarity rarity)
 		{
-			Material mat = cardBase.GetComponent<Renderer>().material;
+			Material mat = this.GetComponent<Renderer>().material;
 
 
 			if (rarity == Rarity.Common)
@@ -81,4 +119,11 @@ namespace Jesus.Cards
 			}
 		}
 	}
+}
+
+public enum CardSize
+{
+    Small,
+    Medium,
+    Large,
 }
