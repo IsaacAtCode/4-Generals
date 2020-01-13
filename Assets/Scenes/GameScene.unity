@@ -4001,6 +4001,8 @@ GameObject:
   - component: {fileID: 1666817451}
   - component: {fileID: 1666817450}
   - component: {fileID: 1666817452}
+  - component: {fileID: 1666817453}
+  - component: {fileID: 1666817454}
   m_Layer: 0
   m_Name: Hands
   m_TagString: Untagged
@@ -4036,1265 +4038,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fa8907a0bedc0264787086a86afd6fcf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  leftHand:
-    FrameId: 0
-    Id: 0
-    Fingers:
-    - bones:
-      - PrevJoint:
-          x: 0
-          y: 0
-          z: 0
-        NextJoint:
-          x: 0
-          y: 0
-          z: 0
-        Center:
-          x: 0
-          y: 0
-          z: 0
-        Direction:
-          x: 0
-          y: 0
-          z: 0
-        Length: 0
-        Width: 0
-        Type: -1
-        Rotation:
-          x: 0
-          y: 0
-          z: 0
-          w: 0
-      - PrevJoint:
-          x: 0
-          y: 0
-          z: 0
-        NextJoint:
-          x: 0
-          y: 0
-          z: 0
-        Center:
-          x: 0
-          y: 0
-          z: 0
-        Direction:
-          x: 0
-          y: 0
-          z: 0
-        Length: 0
-        Width: 0
-        Type: -1
-        Rotation:
-          x: 0
-          y: 0
-          z: 0
-          w: 0
-      - PrevJoint:
-          x: 0
-          y: 0
-          z: 0
-        NextJoint:
-          x: 0
-          y: 0
-          z: 0
-        Center:
-          x: 0
-          y: 0
-          z: 0
-        Direction:
-          x: 0
-          y: 0
-          z: 0
-        Length: 0
-        Width: 0
-        Type: -1
-        Rotation:
-          x: 0
-          y: 0
-          z: 0
-          w: 0
-      - PrevJoint:
-          x: 0
-          y: 0
-          z: 0
-        NextJoint:
-          x: 0
-          y: 0
-          z: 0
-        Center:
-          x: 0
-          y: 0
-          z: 0
-        Direction:
-          x: 0
-          y: 0
-          z: 0
-        Length: 0
-        Width: 0
-        Type: -1
-        Rotation:
-          x: 0
-          y: 0
-          z: 0
-          w: 0
-      Type: 0
-      Id: 0
-      HandId: 0
-      TipPosition:
-        x: 0
-        y: 0
-        z: 0
-      Direction:
-        x: 0
-        y: 0
-        z: 0
-      Width: 0
-      Length: 0
-      IsExtended: 0
-      TimeVisible: 0
-    - bones:
-      - PrevJoint:
-          x: 0
-          y: 0
-          z: 0
-        NextJoint:
-          x: 0
-          y: 0
-          z: 0
-        Center:
-          x: 0
-          y: 0
-          z: 0
-        Direction:
-          x: 0
-          y: 0
-          z: 0
-        Length: 0
-        Width: 0
-        Type: -1
-        Rotation:
-          x: 0
-          y: 0
-          z: 0
-          w: 0
-      - PrevJoint:
-          x: 0
-          y: 0
-          z: 0
-        NextJoint:
-          x: 0
-          y: 0
-          z: 0
-        Center:
-          x: 0
-          y: 0
-          z: 0
-        Direction:
-          x: 0
-          y: 0
-          z: 0
-        Length: 0
-        Width: 0
-        Type: -1
-        Rotation:
-          x: 0
-          y: 0
-          z: 0
-          w: 0
-      - PrevJoint:
-          x: 0
-          y: 0
-          z: 0
-        NextJoint:
-          x: 0
-          y: 0
-          z: 0
-        Center:
-          x: 0
-          y: 0
-          z: 0
-        Direction:
-          x: 0
-          y: 0
-          z: 0
-        Length: 0
-        Width: 0
-        Type: -1
-        Rotation:
-          x: 0
-          y: 0
-          z: 0
-          w: 0
-      - PrevJoint:
-          x: 0
-          y: 0
-          z: 0
-        NextJoint:
-          x: 0
-          y: 0
-          z: 0
-        Center:
-          x: 0
-          y: 0
-          z: 0
-        Direction:
-          x: 0
-          y: 0
-          z: 0
-        Length: 0
-        Width: 0
-        Type: -1
-        Rotation:
-          x: 0
-          y: 0
-          z: 0
-          w: 0
-      Type: 0
-      Id: 0
-      HandId: 0
-      TipPosition:
-        x: 0
-        y: 0
-        z: 0
-      Direction:
-        x: 0
-        y: 0
-        z: 0
-      Width: 0
-      Length: 0
-      IsExtended: 0
-      TimeVisible: 0
-    - bones:
-      - PrevJoint:
-          x: 0
-          y: 0
-          z: 0
-        NextJoint:
-          x: 0
-          y: 0
-          z: 0
-        Center:
-          x: 0
-          y: 0
-          z: 0
-        Direction:
-          x: 0
-          y: 0
-          z: 0
-        Length: 0
-        Width: 0
-        Type: -1
-        Rotation:
-          x: 0
-          y: 0
-          z: 0
-          w: 0
-      - PrevJoint:
-          x: 0
-          y: 0
-          z: 0
-        NextJoint:
-          x: 0
-          y: 0
-          z: 0
-        Center:
-          x: 0
-          y: 0
-          z: 0
-        Direction:
-          x: 0
-          y: 0
-          z: 0
-        Length: 0
-        Width: 0
-        Type: -1
-        Rotation:
-          x: 0
-          y: 0
-          z: 0
-          w: 0
-      - PrevJoint:
-          x: 0
-          y: 0
-          z: 0
-        NextJoint:
-          x: 0
-          y: 0
-          z: 0
-        Center:
-          x: 0
-          y: 0
-          z: 0
-        Direction:
-          x: 0
-          y: 0
-          z: 0
-        Length: 0
-        Width: 0
-        Type: -1
-        Rotation:
-          x: 0
-          y: 0
-          z: 0
-          w: 0
-      - PrevJoint:
-          x: 0
-          y: 0
-          z: 0
-        NextJoint:
-          x: 0
-          y: 0
-          z: 0
-        Center:
-          x: 0
-          y: 0
-          z: 0
-        Direction:
-          x: 0
-          y: 0
-          z: 0
-        Length: 0
-        Width: 0
-        Type: -1
-        Rotation:
-          x: 0
-          y: 0
-          z: 0
-          w: 0
-      Type: 0
-      Id: 0
-      HandId: 0
-      TipPosition:
-        x: 0
-        y: 0
-        z: 0
-      Direction:
-        x: 0
-        y: 0
-        z: 0
-      Width: 0
-      Length: 0
-      IsExtended: 0
-      TimeVisible: 0
-    - bones:
-      - PrevJoint:
-          x: 0
-          y: 0
-          z: 0
-        NextJoint:
-          x: 0
-          y: 0
-          z: 0
-        Center:
-          x: 0
-          y: 0
-          z: 0
-        Direction:
-          x: 0
-          y: 0
-          z: 0
-        Length: 0
-        Width: 0
-        Type: -1
-        Rotation:
-          x: 0
-          y: 0
-          z: 0
-          w: 0
-      - PrevJoint:
-          x: 0
-          y: 0
-          z: 0
-        NextJoint:
-          x: 0
-          y: 0
-          z: 0
-        Center:
-          x: 0
-          y: 0
-          z: 0
-        Direction:
-          x: 0
-          y: 0
-          z: 0
-        Length: 0
-        Width: 0
-        Type: -1
-        Rotation:
-          x: 0
-          y: 0
-          z: 0
-          w: 0
-      - PrevJoint:
-          x: 0
-          y: 0
-          z: 0
-        NextJoint:
-          x: 0
-          y: 0
-          z: 0
-        Center:
-          x: 0
-          y: 0
-          z: 0
-        Direction:
-          x: 0
-          y: 0
-          z: 0
-        Length: 0
-        Width: 0
-        Type: -1
-        Rotation:
-          x: 0
-          y: 0
-          z: 0
-          w: 0
-      - PrevJoint:
-          x: 0
-          y: 0
-          z: 0
-        NextJoint:
-          x: 0
-          y: 0
-          z: 0
-        Center:
-          x: 0
-          y: 0
-          z: 0
-        Direction:
-          x: 0
-          y: 0
-          z: 0
-        Length: 0
-        Width: 0
-        Type: -1
-        Rotation:
-          x: 0
-          y: 0
-          z: 0
-          w: 0
-      Type: 0
-      Id: 0
-      HandId: 0
-      TipPosition:
-        x: 0
-        y: 0
-        z: 0
-      Direction:
-        x: 0
-        y: 0
-        z: 0
-      Width: 0
-      Length: 0
-      IsExtended: 0
-      TimeVisible: 0
-    - bones:
-      - PrevJoint:
-          x: 0
-          y: 0
-          z: 0
-        NextJoint:
-          x: 0
-          y: 0
-          z: 0
-        Center:
-          x: 0
-          y: 0
-          z: 0
-        Direction:
-          x: 0
-          y: 0
-          z: 0
-        Length: 0
-        Width: 0
-        Type: -1
-        Rotation:
-          x: 0
-          y: 0
-          z: 0
-          w: 0
-      - PrevJoint:
-          x: 0
-          y: 0
-          z: 0
-        NextJoint:
-          x: 0
-          y: 0
-          z: 0
-        Center:
-          x: 0
-          y: 0
-          z: 0
-        Direction:
-          x: 0
-          y: 0
-          z: 0
-        Length: 0
-        Width: 0
-        Type: -1
-        Rotation:
-          x: 0
-          y: 0
-          z: 0
-          w: 0
-      - PrevJoint:
-          x: 0
-          y: 0
-          z: 0
-        NextJoint:
-          x: 0
-          y: 0
-          z: 0
-        Center:
-          x: 0
-          y: 0
-          z: 0
-        Direction:
-          x: 0
-          y: 0
-          z: 0
-        Length: 0
-        Width: 0
-        Type: -1
-        Rotation:
-          x: 0
-          y: 0
-          z: 0
-          w: 0
-      - PrevJoint:
-          x: 0
-          y: 0
-          z: 0
-        NextJoint:
-          x: 0
-          y: 0
-          z: 0
-        Center:
-          x: 0
-          y: 0
-          z: 0
-        Direction:
-          x: 0
-          y: 0
-          z: 0
-        Length: 0
-        Width: 0
-        Type: -1
-        Rotation:
-          x: 0
-          y: 0
-          z: 0
-          w: 0
-      Type: 0
-      Id: 0
-      HandId: 0
-      TipPosition:
-        x: 0
-        y: 0
-        z: 0
-      Direction:
-        x: 0
-        y: 0
-        z: 0
-      Width: 0
-      Length: 0
-      IsExtended: 0
-      TimeVisible: 0
-    PalmPosition:
-      x: 0
-      y: 0
-      z: 0
-    PalmVelocity:
-      x: 0
-      y: 0
-      z: 0
-    PalmNormal:
-      x: 0
-      y: 0
-      z: 0
-    Direction:
-      x: 0
-      y: 0
-      z: 0
-    Rotation:
-      x: 0
-      y: 0
-      z: 0
-      w: 0
-    GrabStrength: 0
-    GrabAngle: 0
-    PinchStrength: 0
-    PinchDistance: 0
-    PalmWidth: 0
-    StabilizedPalmPosition:
-      x: 0
-      y: 0
-      z: 0
-    WristPosition:
-      x: 0
-      y: 0
-      z: 0
-    TimeVisible: 0
-    Confidence: 0
-    IsLeft: 0
-    Arm:
-      PrevJoint:
-        x: 0
-        y: 0
-        z: 0
-      NextJoint:
-        x: 0
-        y: 0
-        z: 0
-      Center:
-        x: 0
-        y: 0
-        z: 0
-      Direction:
-        x: 0
-        y: 0
-        z: 0
-      Length: 0
-      Width: 0
-      Type: -1
-      Rotation:
-        x: 0
-        y: 0
-        z: 0
-        w: 0
-  handMiddle_L: {fileID: 920985513}
-  rightHand:
-    FrameId: 0
-    Id: 0
-    Fingers:
-    - bones:
-      - PrevJoint:
-          x: 0
-          y: 0
-          z: 0
-        NextJoint:
-          x: 0
-          y: 0
-          z: 0
-        Center:
-          x: 0
-          y: 0
-          z: 0
-        Direction:
-          x: 0
-          y: 0
-          z: 0
-        Length: 0
-        Width: 0
-        Type: -1
-        Rotation:
-          x: 0
-          y: 0
-          z: 0
-          w: 0
-      - PrevJoint:
-          x: 0
-          y: 0
-          z: 0
-        NextJoint:
-          x: 0
-          y: 0
-          z: 0
-        Center:
-          x: 0
-          y: 0
-          z: 0
-        Direction:
-          x: 0
-          y: 0
-          z: 0
-        Length: 0
-        Width: 0
-        Type: -1
-        Rotation:
-          x: 0
-          y: 0
-          z: 0
-          w: 0
-      - PrevJoint:
-          x: 0
-          y: 0
-          z: 0
-        NextJoint:
-          x: 0
-          y: 0
-          z: 0
-        Center:
-          x: 0
-          y: 0
-          z: 0
-        Direction:
-          x: 0
-          y: 0
-          z: 0
-        Length: 0
-        Width: 0
-        Type: -1
-        Rotation:
-          x: 0
-          y: 0
-          z: 0
-          w: 0
-      - PrevJoint:
-          x: 0
-          y: 0
-          z: 0
-        NextJoint:
-          x: 0
-          y: 0
-          z: 0
-        Center:
-          x: 0
-          y: 0
-          z: 0
-        Direction:
-          x: 0
-          y: 0
-          z: 0
-        Length: 0
-        Width: 0
-        Type: -1
-        Rotation:
-          x: 0
-          y: 0
-          z: 0
-          w: 0
-      Type: 0
-      Id: 0
-      HandId: 0
-      TipPosition:
-        x: 0
-        y: 0
-        z: 0
-      Direction:
-        x: 0
-        y: 0
-        z: 0
-      Width: 0
-      Length: 0
-      IsExtended: 0
-      TimeVisible: 0
-    - bones:
-      - PrevJoint:
-          x: 0
-          y: 0
-          z: 0
-        NextJoint:
-          x: 0
-          y: 0
-          z: 0
-        Center:
-          x: 0
-          y: 0
-          z: 0
-        Direction:
-          x: 0
-          y: 0
-          z: 0
-        Length: 0
-        Width: 0
-        Type: -1
-        Rotation:
-          x: 0
-          y: 0
-          z: 0
-          w: 0
-      - PrevJoint:
-          x: 0
-          y: 0
-          z: 0
-        NextJoint:
-          x: 0
-          y: 0
-          z: 0
-        Center:
-          x: 0
-          y: 0
-          z: 0
-        Direction:
-          x: 0
-          y: 0
-          z: 0
-        Length: 0
-        Width: 0
-        Type: -1
-        Rotation:
-          x: 0
-          y: 0
-          z: 0
-          w: 0
-      - PrevJoint:
-          x: 0
-          y: 0
-          z: 0
-        NextJoint:
-          x: 0
-          y: 0
-          z: 0
-        Center:
-          x: 0
-          y: 0
-          z: 0
-        Direction:
-          x: 0
-          y: 0
-          z: 0
-        Length: 0
-        Width: 0
-        Type: -1
-        Rotation:
-          x: 0
-          y: 0
-          z: 0
-          w: 0
-      - PrevJoint:
-          x: 0
-          y: 0
-          z: 0
-        NextJoint:
-          x: 0
-          y: 0
-          z: 0
-        Center:
-          x: 0
-          y: 0
-          z: 0
-        Direction:
-          x: 0
-          y: 0
-          z: 0
-        Length: 0
-        Width: 0
-        Type: -1
-        Rotation:
-          x: 0
-          y: 0
-          z: 0
-          w: 0
-      Type: 0
-      Id: 0
-      HandId: 0
-      TipPosition:
-        x: 0
-        y: 0
-        z: 0
-      Direction:
-        x: 0
-        y: 0
-        z: 0
-      Width: 0
-      Length: 0
-      IsExtended: 0
-      TimeVisible: 0
-    - bones:
-      - PrevJoint:
-          x: 0
-          y: 0
-          z: 0
-        NextJoint:
-          x: 0
-          y: 0
-          z: 0
-        Center:
-          x: 0
-          y: 0
-          z: 0
-        Direction:
-          x: 0
-          y: 0
-          z: 0
-        Length: 0
-        Width: 0
-        Type: -1
-        Rotation:
-          x: 0
-          y: 0
-          z: 0
-          w: 0
-      - PrevJoint:
-          x: 0
-          y: 0
-          z: 0
-        NextJoint:
-          x: 0
-          y: 0
-          z: 0
-        Center:
-          x: 0
-          y: 0
-          z: 0
-        Direction:
-          x: 0
-          y: 0
-          z: 0
-        Length: 0
-        Width: 0
-        Type: -1
-        Rotation:
-          x: 0
-          y: 0
-          z: 0
-          w: 0
-      - PrevJoint:
-          x: 0
-          y: 0
-          z: 0
-        NextJoint:
-          x: 0
-          y: 0
-          z: 0
-        Center:
-          x: 0
-          y: 0
-          z: 0
-        Direction:
-          x: 0
-          y: 0
-          z: 0
-        Length: 0
-        Width: 0
-        Type: -1
-        Rotation:
-          x: 0
-          y: 0
-          z: 0
-          w: 0
-      - PrevJoint:
-          x: 0
-          y: 0
-          z: 0
-        NextJoint:
-          x: 0
-          y: 0
-          z: 0
-        Center:
-          x: 0
-          y: 0
-          z: 0
-        Direction:
-          x: 0
-          y: 0
-          z: 0
-        Length: 0
-        Width: 0
-        Type: -1
-        Rotation:
-          x: 0
-          y: 0
-          z: 0
-          w: 0
-      Type: 0
-      Id: 0
-      HandId: 0
-      TipPosition:
-        x: 0
-        y: 0
-        z: 0
-      Direction:
-        x: 0
-        y: 0
-        z: 0
-      Width: 0
-      Length: 0
-      IsExtended: 0
-      TimeVisible: 0
-    - bones:
-      - PrevJoint:
-          x: 0
-          y: 0
-          z: 0
-        NextJoint:
-          x: 0
-          y: 0
-          z: 0
-        Center:
-          x: 0
-          y: 0
-          z: 0
-        Direction:
-          x: 0
-          y: 0
-          z: 0
-        Length: 0
-        Width: 0
-        Type: -1
-        Rotation:
-          x: 0
-          y: 0
-          z: 0
-          w: 0
-      - PrevJoint:
-          x: 0
-          y: 0
-          z: 0
-        NextJoint:
-          x: 0
-          y: 0
-          z: 0
-        Center:
-          x: 0
-          y: 0
-          z: 0
-        Direction:
-          x: 0
-          y: 0
-          z: 0
-        Length: 0
-        Width: 0
-        Type: -1
-        Rotation:
-          x: 0
-          y: 0
-          z: 0
-          w: 0
-      - PrevJoint:
-          x: 0
-          y: 0
-          z: 0
-        NextJoint:
-          x: 0
-          y: 0
-          z: 0
-        Center:
-          x: 0
-          y: 0
-          z: 0
-        Direction:
-          x: 0
-          y: 0
-          z: 0
-        Length: 0
-        Width: 0
-        Type: -1
-        Rotation:
-          x: 0
-          y: 0
-          z: 0
-          w: 0
-      - PrevJoint:
-          x: 0
-          y: 0
-          z: 0
-        NextJoint:
-          x: 0
-          y: 0
-          z: 0
-        Center:
-          x: 0
-          y: 0
-          z: 0
-        Direction:
-          x: 0
-          y: 0
-          z: 0
-        Length: 0
-        Width: 0
-        Type: -1
-        Rotation:
-          x: 0
-          y: 0
-          z: 0
-          w: 0
-      Type: 0
-      Id: 0
-      HandId: 0
-      TipPosition:
-        x: 0
-        y: 0
-        z: 0
-      Direction:
-        x: 0
-        y: 0
-        z: 0
-      Width: 0
-      Length: 0
-      IsExtended: 0
-      TimeVisible: 0
-    - bones:
-      - PrevJoint:
-          x: 0
-          y: 0
-          z: 0
-        NextJoint:
-          x: 0
-          y: 0
-          z: 0
-        Center:
-          x: 0
-          y: 0
-          z: 0
-        Direction:
-          x: 0
-          y: 0
-          z: 0
-        Length: 0
-        Width: 0
-        Type: -1
-        Rotation:
-          x: 0
-          y: 0
-          z: 0
-          w: 0
-      - PrevJoint:
-          x: 0
-          y: 0
-          z: 0
-        NextJoint:
-          x: 0
-          y: 0
-          z: 0
-        Center:
-          x: 0
-          y: 0
-          z: 0
-        Direction:
-          x: 0
-          y: 0
-          z: 0
-        Length: 0
-        Width: 0
-        Type: -1
-        Rotation:
-          x: 0
-          y: 0
-          z: 0
-          w: 0
-      - PrevJoint:
-          x: 0
-          y: 0
-          z: 0
-        NextJoint:
-          x: 0
-          y: 0
-          z: 0
-        Center:
-          x: 0
-          y: 0
-          z: 0
-        Direction:
-          x: 0
-          y: 0
-          z: 0
-        Length: 0
-        Width: 0
-        Type: -1
-        Rotation:
-          x: 0
-          y: 0
-          z: 0
-          w: 0
-      - PrevJoint:
-          x: 0
-          y: 0
-          z: 0
-        NextJoint:
-          x: 0
-          y: 0
-          z: 0
-        Center:
-          x: 0
-          y: 0
-          z: 0
-        Direction:
-          x: 0
-          y: 0
-          z: 0
-        Length: 0
-        Width: 0
-        Type: -1
-        Rotation:
-          x: 0
-          y: 0
-          z: 0
-          w: 0
-      Type: 0
-      Id: 0
-      HandId: 0
-      TipPosition:
-        x: 0
-        y: 0
-        z: 0
-      Direction:
-        x: 0
-        y: 0
-        z: 0
-      Width: 0
-      Length: 0
-      IsExtended: 0
-      TimeVisible: 0
-    PalmPosition:
-      x: 0
-      y: 0
-      z: 0
-    PalmVelocity:
-      x: 0
-      y: 0
-      z: 0
-    PalmNormal:
-      x: 0
-      y: 0
-      z: 0
-    Direction:
-      x: 0
-      y: 0
-      z: 0
-    Rotation:
-      x: 0
-      y: 0
-      z: 0
-      w: 0
-    GrabStrength: 0
-    GrabAngle: 0
-    PinchStrength: 0
-    PinchDistance: 0
-    PalmWidth: 0
-    StabilizedPalmPosition:
-      x: 0
-      y: 0
-      z: 0
-    WristPosition:
-      x: 0
-      y: 0
-      z: 0
-    TimeVisible: 0
-    Confidence: 0
-    IsLeft: 0
-    Arm:
-      PrevJoint:
-        x: 0
-        y: 0
-        z: 0
-      NextJoint:
-        x: 0
-        y: 0
-        z: 0
-      Center:
-        x: 0
-        y: 0
-        z: 0
-      Direction:
-        x: 0
-        y: 0
-        z: 0
-      Length: 0
-      Width: 0
-      Type: -1
-      Rotation:
-        x: 0
-        y: 0
-        z: 0
-        w: 0
-  handMiddle_R: {fileID: 818177237}
-  pointedAtCard: {fileID: 0}
-  selectedCard: {fileID: 0}
-  cardSize_R: 1
-  deck: {fileID: 1666817452}
-  cards: []
+  leftHand: {fileID: 0}
+  rightHand: {fileID: 0}
   frame:
     Id: 0
     Timestamp: 0
@@ -5328,17 +4073,1309 @@ MonoBehaviour:
   m_GameObject: {fileID: 1666817448}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f75f1b8020bd2e2479dcb61138d982dd, type: 3}
+  m_Script: {fileID: 11500000, guid: 36c2742c5ab2a74468899f942dd754dd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cards:
+  cards: []
+  cardObjects: []
+  maxCards: 6
+  hand:
+    FrameId: 0
+    Id: 0
+    Fingers:
+    - bones:
+      - PrevJoint:
+          x: 0
+          y: 0
+          z: 0
+        NextJoint:
+          x: 0
+          y: 0
+          z: 0
+        Center:
+          x: 0
+          y: 0
+          z: 0
+        Direction:
+          x: 0
+          y: 0
+          z: 0
+        Length: 0
+        Width: 0
+        Type: -1
+        Rotation:
+          x: 0
+          y: 0
+          z: 0
+          w: 0
+      - PrevJoint:
+          x: 0
+          y: 0
+          z: 0
+        NextJoint:
+          x: 0
+          y: 0
+          z: 0
+        Center:
+          x: 0
+          y: 0
+          z: 0
+        Direction:
+          x: 0
+          y: 0
+          z: 0
+        Length: 0
+        Width: 0
+        Type: -1
+        Rotation:
+          x: 0
+          y: 0
+          z: 0
+          w: 0
+      - PrevJoint:
+          x: 0
+          y: 0
+          z: 0
+        NextJoint:
+          x: 0
+          y: 0
+          z: 0
+        Center:
+          x: 0
+          y: 0
+          z: 0
+        Direction:
+          x: 0
+          y: 0
+          z: 0
+        Length: 0
+        Width: 0
+        Type: -1
+        Rotation:
+          x: 0
+          y: 0
+          z: 0
+          w: 0
+      - PrevJoint:
+          x: 0
+          y: 0
+          z: 0
+        NextJoint:
+          x: 0
+          y: 0
+          z: 0
+        Center:
+          x: 0
+          y: 0
+          z: 0
+        Direction:
+          x: 0
+          y: 0
+          z: 0
+        Length: 0
+        Width: 0
+        Type: -1
+        Rotation:
+          x: 0
+          y: 0
+          z: 0
+          w: 0
+      Type: 0
+      Id: 0
+      HandId: 0
+      TipPosition:
+        x: 0
+        y: 0
+        z: 0
+      Direction:
+        x: 0
+        y: 0
+        z: 0
+      Width: 0
+      Length: 0
+      IsExtended: 0
+      TimeVisible: 0
+    - bones:
+      - PrevJoint:
+          x: 0
+          y: 0
+          z: 0
+        NextJoint:
+          x: 0
+          y: 0
+          z: 0
+        Center:
+          x: 0
+          y: 0
+          z: 0
+        Direction:
+          x: 0
+          y: 0
+          z: 0
+        Length: 0
+        Width: 0
+        Type: -1
+        Rotation:
+          x: 0
+          y: 0
+          z: 0
+          w: 0
+      - PrevJoint:
+          x: 0
+          y: 0
+          z: 0
+        NextJoint:
+          x: 0
+          y: 0
+          z: 0
+        Center:
+          x: 0
+          y: 0
+          z: 0
+        Direction:
+          x: 0
+          y: 0
+          z: 0
+        Length: 0
+        Width: 0
+        Type: -1
+        Rotation:
+          x: 0
+          y: 0
+          z: 0
+          w: 0
+      - PrevJoint:
+          x: 0
+          y: 0
+          z: 0
+        NextJoint:
+          x: 0
+          y: 0
+          z: 0
+        Center:
+          x: 0
+          y: 0
+          z: 0
+        Direction:
+          x: 0
+          y: 0
+          z: 0
+        Length: 0
+        Width: 0
+        Type: -1
+        Rotation:
+          x: 0
+          y: 0
+          z: 0
+          w: 0
+      - PrevJoint:
+          x: 0
+          y: 0
+          z: 0
+        NextJoint:
+          x: 0
+          y: 0
+          z: 0
+        Center:
+          x: 0
+          y: 0
+          z: 0
+        Direction:
+          x: 0
+          y: 0
+          z: 0
+        Length: 0
+        Width: 0
+        Type: -1
+        Rotation:
+          x: 0
+          y: 0
+          z: 0
+          w: 0
+      Type: 0
+      Id: 0
+      HandId: 0
+      TipPosition:
+        x: 0
+        y: 0
+        z: 0
+      Direction:
+        x: 0
+        y: 0
+        z: 0
+      Width: 0
+      Length: 0
+      IsExtended: 0
+      TimeVisible: 0
+    - bones:
+      - PrevJoint:
+          x: 0
+          y: 0
+          z: 0
+        NextJoint:
+          x: 0
+          y: 0
+          z: 0
+        Center:
+          x: 0
+          y: 0
+          z: 0
+        Direction:
+          x: 0
+          y: 0
+          z: 0
+        Length: 0
+        Width: 0
+        Type: -1
+        Rotation:
+          x: 0
+          y: 0
+          z: 0
+          w: 0
+      - PrevJoint:
+          x: 0
+          y: 0
+          z: 0
+        NextJoint:
+          x: 0
+          y: 0
+          z: 0
+        Center:
+          x: 0
+          y: 0
+          z: 0
+        Direction:
+          x: 0
+          y: 0
+          z: 0
+        Length: 0
+        Width: 0
+        Type: -1
+        Rotation:
+          x: 0
+          y: 0
+          z: 0
+          w: 0
+      - PrevJoint:
+          x: 0
+          y: 0
+          z: 0
+        NextJoint:
+          x: 0
+          y: 0
+          z: 0
+        Center:
+          x: 0
+          y: 0
+          z: 0
+        Direction:
+          x: 0
+          y: 0
+          z: 0
+        Length: 0
+        Width: 0
+        Type: -1
+        Rotation:
+          x: 0
+          y: 0
+          z: 0
+          w: 0
+      - PrevJoint:
+          x: 0
+          y: 0
+          z: 0
+        NextJoint:
+          x: 0
+          y: 0
+          z: 0
+        Center:
+          x: 0
+          y: 0
+          z: 0
+        Direction:
+          x: 0
+          y: 0
+          z: 0
+        Length: 0
+        Width: 0
+        Type: -1
+        Rotation:
+          x: 0
+          y: 0
+          z: 0
+          w: 0
+      Type: 0
+      Id: 0
+      HandId: 0
+      TipPosition:
+        x: 0
+        y: 0
+        z: 0
+      Direction:
+        x: 0
+        y: 0
+        z: 0
+      Width: 0
+      Length: 0
+      IsExtended: 0
+      TimeVisible: 0
+    - bones:
+      - PrevJoint:
+          x: 0
+          y: 0
+          z: 0
+        NextJoint:
+          x: 0
+          y: 0
+          z: 0
+        Center:
+          x: 0
+          y: 0
+          z: 0
+        Direction:
+          x: 0
+          y: 0
+          z: 0
+        Length: 0
+        Width: 0
+        Type: -1
+        Rotation:
+          x: 0
+          y: 0
+          z: 0
+          w: 0
+      - PrevJoint:
+          x: 0
+          y: 0
+          z: 0
+        NextJoint:
+          x: 0
+          y: 0
+          z: 0
+        Center:
+          x: 0
+          y: 0
+          z: 0
+        Direction:
+          x: 0
+          y: 0
+          z: 0
+        Length: 0
+        Width: 0
+        Type: -1
+        Rotation:
+          x: 0
+          y: 0
+          z: 0
+          w: 0
+      - PrevJoint:
+          x: 0
+          y: 0
+          z: 0
+        NextJoint:
+          x: 0
+          y: 0
+          z: 0
+        Center:
+          x: 0
+          y: 0
+          z: 0
+        Direction:
+          x: 0
+          y: 0
+          z: 0
+        Length: 0
+        Width: 0
+        Type: -1
+        Rotation:
+          x: 0
+          y: 0
+          z: 0
+          w: 0
+      - PrevJoint:
+          x: 0
+          y: 0
+          z: 0
+        NextJoint:
+          x: 0
+          y: 0
+          z: 0
+        Center:
+          x: 0
+          y: 0
+          z: 0
+        Direction:
+          x: 0
+          y: 0
+          z: 0
+        Length: 0
+        Width: 0
+        Type: -1
+        Rotation:
+          x: 0
+          y: 0
+          z: 0
+          w: 0
+      Type: 0
+      Id: 0
+      HandId: 0
+      TipPosition:
+        x: 0
+        y: 0
+        z: 0
+      Direction:
+        x: 0
+        y: 0
+        z: 0
+      Width: 0
+      Length: 0
+      IsExtended: 0
+      TimeVisible: 0
+    - bones:
+      - PrevJoint:
+          x: 0
+          y: 0
+          z: 0
+        NextJoint:
+          x: 0
+          y: 0
+          z: 0
+        Center:
+          x: 0
+          y: 0
+          z: 0
+        Direction:
+          x: 0
+          y: 0
+          z: 0
+        Length: 0
+        Width: 0
+        Type: -1
+        Rotation:
+          x: 0
+          y: 0
+          z: 0
+          w: 0
+      - PrevJoint:
+          x: 0
+          y: 0
+          z: 0
+        NextJoint:
+          x: 0
+          y: 0
+          z: 0
+        Center:
+          x: 0
+          y: 0
+          z: 0
+        Direction:
+          x: 0
+          y: 0
+          z: 0
+        Length: 0
+        Width: 0
+        Type: -1
+        Rotation:
+          x: 0
+          y: 0
+          z: 0
+          w: 0
+      - PrevJoint:
+          x: 0
+          y: 0
+          z: 0
+        NextJoint:
+          x: 0
+          y: 0
+          z: 0
+        Center:
+          x: 0
+          y: 0
+          z: 0
+        Direction:
+          x: 0
+          y: 0
+          z: 0
+        Length: 0
+        Width: 0
+        Type: -1
+        Rotation:
+          x: 0
+          y: 0
+          z: 0
+          w: 0
+      - PrevJoint:
+          x: 0
+          y: 0
+          z: 0
+        NextJoint:
+          x: 0
+          y: 0
+          z: 0
+        Center:
+          x: 0
+          y: 0
+          z: 0
+        Direction:
+          x: 0
+          y: 0
+          z: 0
+        Length: 0
+        Width: 0
+        Type: -1
+        Rotation:
+          x: 0
+          y: 0
+          z: 0
+          w: 0
+      Type: 0
+      Id: 0
+      HandId: 0
+      TipPosition:
+        x: 0
+        y: 0
+        z: 0
+      Direction:
+        x: 0
+        y: 0
+        z: 0
+      Width: 0
+      Length: 0
+      IsExtended: 0
+      TimeVisible: 0
+    PalmPosition:
+      x: 0
+      y: 0
+      z: 0
+    PalmVelocity:
+      x: 0
+      y: 0
+      z: 0
+    PalmNormal:
+      x: 0
+      y: 0
+      z: 0
+    Direction:
+      x: 0
+      y: 0
+      z: 0
+    Rotation:
+      x: 0
+      y: 0
+      z: 0
+      w: 0
+    GrabStrength: 0
+    GrabAngle: 0
+    PinchStrength: 0
+    PinchDistance: 0
+    PalmWidth: 0
+    StabilizedPalmPosition:
+      x: 0
+      y: 0
+      z: 0
+    WristPosition:
+      x: 0
+      y: 0
+      z: 0
+    TimeVisible: 0
+    Confidence: 0
+    IsLeft: 0
+    Arm:
+      PrevJoint:
+        x: 0
+        y: 0
+        z: 0
+      NextJoint:
+        x: 0
+        y: 0
+        z: 0
+      Center:
+        x: 0
+        y: 0
+        z: 0
+      Direction:
+        x: 0
+        y: 0
+        z: 0
+      Length: 0
+      Width: 0
+      Type: -1
+      Rotation:
+        x: 0
+        y: 0
+        z: 0
+        w: 0
+  anchor: {fileID: 920985513}
+  mainCamera: {fileID: 534669902}
+  blankCard: {fileID: 5744155827561160969, guid: 3dd3ae73ea7bf234a95bbc62861cf5d2,
+    type: 3}
+--- !u!114 &1666817453
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1666817448}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 545f15abf9ad0ec448d48021d9551108, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hand:
+    FrameId: 0
+    Id: 0
+    Fingers:
+    - bones:
+      - PrevJoint:
+          x: 0
+          y: 0
+          z: 0
+        NextJoint:
+          x: 0
+          y: 0
+          z: 0
+        Center:
+          x: 0
+          y: 0
+          z: 0
+        Direction:
+          x: 0
+          y: 0
+          z: 0
+        Length: 0
+        Width: 0
+        Type: -1
+        Rotation:
+          x: 0
+          y: 0
+          z: 0
+          w: 0
+      - PrevJoint:
+          x: 0
+          y: 0
+          z: 0
+        NextJoint:
+          x: 0
+          y: 0
+          z: 0
+        Center:
+          x: 0
+          y: 0
+          z: 0
+        Direction:
+          x: 0
+          y: 0
+          z: 0
+        Length: 0
+        Width: 0
+        Type: -1
+        Rotation:
+          x: 0
+          y: 0
+          z: 0
+          w: 0
+      - PrevJoint:
+          x: 0
+          y: 0
+          z: 0
+        NextJoint:
+          x: 0
+          y: 0
+          z: 0
+        Center:
+          x: 0
+          y: 0
+          z: 0
+        Direction:
+          x: 0
+          y: 0
+          z: 0
+        Length: 0
+        Width: 0
+        Type: -1
+        Rotation:
+          x: 0
+          y: 0
+          z: 0
+          w: 0
+      - PrevJoint:
+          x: 0
+          y: 0
+          z: 0
+        NextJoint:
+          x: 0
+          y: 0
+          z: 0
+        Center:
+          x: 0
+          y: 0
+          z: 0
+        Direction:
+          x: 0
+          y: 0
+          z: 0
+        Length: 0
+        Width: 0
+        Type: -1
+        Rotation:
+          x: 0
+          y: 0
+          z: 0
+          w: 0
+      Type: 0
+      Id: 0
+      HandId: 0
+      TipPosition:
+        x: 0
+        y: 0
+        z: 0
+      Direction:
+        x: 0
+        y: 0
+        z: 0
+      Width: 0
+      Length: 0
+      IsExtended: 0
+      TimeVisible: 0
+    - bones:
+      - PrevJoint:
+          x: 0
+          y: 0
+          z: 0
+        NextJoint:
+          x: 0
+          y: 0
+          z: 0
+        Center:
+          x: 0
+          y: 0
+          z: 0
+        Direction:
+          x: 0
+          y: 0
+          z: 0
+        Length: 0
+        Width: 0
+        Type: -1
+        Rotation:
+          x: 0
+          y: 0
+          z: 0
+          w: 0
+      - PrevJoint:
+          x: 0
+          y: 0
+          z: 0
+        NextJoint:
+          x: 0
+          y: 0
+          z: 0
+        Center:
+          x: 0
+          y: 0
+          z: 0
+        Direction:
+          x: 0
+          y: 0
+          z: 0
+        Length: 0
+        Width: 0
+        Type: -1
+        Rotation:
+          x: 0
+          y: 0
+          z: 0
+          w: 0
+      - PrevJoint:
+          x: 0
+          y: 0
+          z: 0
+        NextJoint:
+          x: 0
+          y: 0
+          z: 0
+        Center:
+          x: 0
+          y: 0
+          z: 0
+        Direction:
+          x: 0
+          y: 0
+          z: 0
+        Length: 0
+        Width: 0
+        Type: -1
+        Rotation:
+          x: 0
+          y: 0
+          z: 0
+          w: 0
+      - PrevJoint:
+          x: 0
+          y: 0
+          z: 0
+        NextJoint:
+          x: 0
+          y: 0
+          z: 0
+        Center:
+          x: 0
+          y: 0
+          z: 0
+        Direction:
+          x: 0
+          y: 0
+          z: 0
+        Length: 0
+        Width: 0
+        Type: -1
+        Rotation:
+          x: 0
+          y: 0
+          z: 0
+          w: 0
+      Type: 0
+      Id: 0
+      HandId: 0
+      TipPosition:
+        x: 0
+        y: 0
+        z: 0
+      Direction:
+        x: 0
+        y: 0
+        z: 0
+      Width: 0
+      Length: 0
+      IsExtended: 0
+      TimeVisible: 0
+    - bones:
+      - PrevJoint:
+          x: 0
+          y: 0
+          z: 0
+        NextJoint:
+          x: 0
+          y: 0
+          z: 0
+        Center:
+          x: 0
+          y: 0
+          z: 0
+        Direction:
+          x: 0
+          y: 0
+          z: 0
+        Length: 0
+        Width: 0
+        Type: -1
+        Rotation:
+          x: 0
+          y: 0
+          z: 0
+          w: 0
+      - PrevJoint:
+          x: 0
+          y: 0
+          z: 0
+        NextJoint:
+          x: 0
+          y: 0
+          z: 0
+        Center:
+          x: 0
+          y: 0
+          z: 0
+        Direction:
+          x: 0
+          y: 0
+          z: 0
+        Length: 0
+        Width: 0
+        Type: -1
+        Rotation:
+          x: 0
+          y: 0
+          z: 0
+          w: 0
+      - PrevJoint:
+          x: 0
+          y: 0
+          z: 0
+        NextJoint:
+          x: 0
+          y: 0
+          z: 0
+        Center:
+          x: 0
+          y: 0
+          z: 0
+        Direction:
+          x: 0
+          y: 0
+          z: 0
+        Length: 0
+        Width: 0
+        Type: -1
+        Rotation:
+          x: 0
+          y: 0
+          z: 0
+          w: 0
+      - PrevJoint:
+          x: 0
+          y: 0
+          z: 0
+        NextJoint:
+          x: 0
+          y: 0
+          z: 0
+        Center:
+          x: 0
+          y: 0
+          z: 0
+        Direction:
+          x: 0
+          y: 0
+          z: 0
+        Length: 0
+        Width: 0
+        Type: -1
+        Rotation:
+          x: 0
+          y: 0
+          z: 0
+          w: 0
+      Type: 0
+      Id: 0
+      HandId: 0
+      TipPosition:
+        x: 0
+        y: 0
+        z: 0
+      Direction:
+        x: 0
+        y: 0
+        z: 0
+      Width: 0
+      Length: 0
+      IsExtended: 0
+      TimeVisible: 0
+    - bones:
+      - PrevJoint:
+          x: 0
+          y: 0
+          z: 0
+        NextJoint:
+          x: 0
+          y: 0
+          z: 0
+        Center:
+          x: 0
+          y: 0
+          z: 0
+        Direction:
+          x: 0
+          y: 0
+          z: 0
+        Length: 0
+        Width: 0
+        Type: -1
+        Rotation:
+          x: 0
+          y: 0
+          z: 0
+          w: 0
+      - PrevJoint:
+          x: 0
+          y: 0
+          z: 0
+        NextJoint:
+          x: 0
+          y: 0
+          z: 0
+        Center:
+          x: 0
+          y: 0
+          z: 0
+        Direction:
+          x: 0
+          y: 0
+          z: 0
+        Length: 0
+        Width: 0
+        Type: -1
+        Rotation:
+          x: 0
+          y: 0
+          z: 0
+          w: 0
+      - PrevJoint:
+          x: 0
+          y: 0
+          z: 0
+        NextJoint:
+          x: 0
+          y: 0
+          z: 0
+        Center:
+          x: 0
+          y: 0
+          z: 0
+        Direction:
+          x: 0
+          y: 0
+          z: 0
+        Length: 0
+        Width: 0
+        Type: -1
+        Rotation:
+          x: 0
+          y: 0
+          z: 0
+          w: 0
+      - PrevJoint:
+          x: 0
+          y: 0
+          z: 0
+        NextJoint:
+          x: 0
+          y: 0
+          z: 0
+        Center:
+          x: 0
+          y: 0
+          z: 0
+        Direction:
+          x: 0
+          y: 0
+          z: 0
+        Length: 0
+        Width: 0
+        Type: -1
+        Rotation:
+          x: 0
+          y: 0
+          z: 0
+          w: 0
+      Type: 0
+      Id: 0
+      HandId: 0
+      TipPosition:
+        x: 0
+        y: 0
+        z: 0
+      Direction:
+        x: 0
+        y: 0
+        z: 0
+      Width: 0
+      Length: 0
+      IsExtended: 0
+      TimeVisible: 0
+    - bones:
+      - PrevJoint:
+          x: 0
+          y: 0
+          z: 0
+        NextJoint:
+          x: 0
+          y: 0
+          z: 0
+        Center:
+          x: 0
+          y: 0
+          z: 0
+        Direction:
+          x: 0
+          y: 0
+          z: 0
+        Length: 0
+        Width: 0
+        Type: -1
+        Rotation:
+          x: 0
+          y: 0
+          z: 0
+          w: 0
+      - PrevJoint:
+          x: 0
+          y: 0
+          z: 0
+        NextJoint:
+          x: 0
+          y: 0
+          z: 0
+        Center:
+          x: 0
+          y: 0
+          z: 0
+        Direction:
+          x: 0
+          y: 0
+          z: 0
+        Length: 0
+        Width: 0
+        Type: -1
+        Rotation:
+          x: 0
+          y: 0
+          z: 0
+          w: 0
+      - PrevJoint:
+          x: 0
+          y: 0
+          z: 0
+        NextJoint:
+          x: 0
+          y: 0
+          z: 0
+        Center:
+          x: 0
+          y: 0
+          z: 0
+        Direction:
+          x: 0
+          y: 0
+          z: 0
+        Length: 0
+        Width: 0
+        Type: -1
+        Rotation:
+          x: 0
+          y: 0
+          z: 0
+          w: 0
+      - PrevJoint:
+          x: 0
+          y: 0
+          z: 0
+        NextJoint:
+          x: 0
+          y: 0
+          z: 0
+        Center:
+          x: 0
+          y: 0
+          z: 0
+        Direction:
+          x: 0
+          y: 0
+          z: 0
+        Length: 0
+        Width: 0
+        Type: -1
+        Rotation:
+          x: 0
+          y: 0
+          z: 0
+          w: 0
+      Type: 0
+      Id: 0
+      HandId: 0
+      TipPosition:
+        x: 0
+        y: 0
+        z: 0
+      Direction:
+        x: 0
+        y: 0
+        z: 0
+      Width: 0
+      Length: 0
+      IsExtended: 0
+      TimeVisible: 0
+    PalmPosition:
+      x: 0
+      y: 0
+      z: 0
+    PalmVelocity:
+      x: 0
+      y: 0
+      z: 0
+    PalmNormal:
+      x: 0
+      y: 0
+      z: 0
+    Direction:
+      x: 0
+      y: 0
+      z: 0
+    Rotation:
+      x: 0
+      y: 0
+      z: 0
+      w: 0
+    GrabStrength: 0
+    GrabAngle: 0
+    PinchStrength: 0
+    PinchDistance: 0
+    PalmWidth: 0
+    StabilizedPalmPosition:
+      x: 0
+      y: 0
+      z: 0
+    WristPosition:
+      x: 0
+      y: 0
+      z: 0
+    TimeVisible: 0
+    Confidence: 0
+    IsLeft: 0
+    Arm:
+      PrevJoint:
+        x: 0
+        y: 0
+        z: 0
+      NextJoint:
+        x: 0
+        y: 0
+        z: 0
+      Center:
+        x: 0
+        y: 0
+        z: 0
+      Direction:
+        x: 0
+        y: 0
+        z: 0
+      Length: 0
+      Width: 0
+      Type: -1
+      Rotation:
+        x: 0
+        y: 0
+        z: 0
+        w: 0
+  anchor: {fileID: 818177237}
+  blankCard: {fileID: 5744155827561160969, guid: 3dd3ae73ea7bf234a95bbc62861cf5d2,
+    type: 3}
+--- !u!114 &1666817454
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1666817448}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ee4e4ad0197b1544489ffc3c214341c3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  commonCards:
   - {fileID: 11400000, guid: 812a560f26194604089ec04fca174376, type: 2}
-  - {fileID: 11400000, guid: 812a560f26194604089ec04fca174376, type: 2}
-  - {fileID: 11400000, guid: 812a560f26194604089ec04fca174376, type: 2}
-  - {fileID: 11400000, guid: 812a560f26194604089ec04fca174376, type: 2}
-  - {fileID: 11400000, guid: 812a560f26194604089ec04fca174376, type: 2}
-  createNewDeck: 0
-  maxCards: 5
+  - {fileID: 11400000, guid: fa5e7652ee093c14a8d8605bef78b7d5, type: 2}
+  - {fileID: 11400000, guid: 4a86f67394ee4b94a817661e18ec7e0a, type: 2}
+  rareCards:
+  - {fileID: 11400000, guid: c8fb4b1383d26974d8ad8edd3eb0ec8c, type: 2}
+  - {fileID: 11400000, guid: c2da844b4fa402a4f9fd4e974cc8bac6, type: 2}
+  - {fileID: 11400000, guid: c0dd48d8b1eb414459e25284b351c09c, type: 2}
+  superRareCards:
+  - {fileID: 11400000, guid: 07c6a94f9a9caaa4da2f7dcc88a808ac, type: 2}
+  - {fileID: 11400000, guid: 061534a9fff53854abceb532f64b9a33, type: 2}
+  - {fileID: 11400000, guid: 50c54fb4a34d80f40b3675593337bd38, type: 2}
+  count: 20
+  pile: []
 --- !u!1 &1756271765
 GameObject:
   m_ObjectHideFlags: 0
