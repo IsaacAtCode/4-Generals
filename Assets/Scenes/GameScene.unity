@@ -3938,7 +3938,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1561043862}
   - component: {fileID: 1561043861}
-  - component: {fileID: 1561043860}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -3946,35 +3945,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1561043860
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1561043859}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ee4e4ad0197b1544489ffc3c214341c3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Name: 
-  m_EditorClassIdentifier: 
-  commonCards:
-  - {fileID: 11400000, guid: 812a560f26194604089ec04fca174376, type: 2}
-  - {fileID: 11400000, guid: fa5e7652ee093c14a8d8605bef78b7d5, type: 2}
-  - {fileID: 11400000, guid: 4a86f67394ee4b94a817661e18ec7e0a, type: 2}
-  rareCards:
-  - {fileID: 11400000, guid: c8fb4b1383d26974d8ad8edd3eb0ec8c, type: 2}
-  - {fileID: 11400000, guid: c2da844b4fa402a4f9fd4e974cc8bac6, type: 2}
-  - {fileID: 11400000, guid: c0dd48d8b1eb414459e25284b351c09c, type: 2}
-  superRareCards:
-  - {fileID: 11400000, guid: 07c6a94f9a9caaa4da2f7dcc88a808ac, type: 2}
-  - {fileID: 11400000, guid: 061534a9fff53854abceb532f64b9a33, type: 2}
-  - {fileID: 11400000, guid: 50c54fb4a34d80f40b3675593337bd38, type: 2}
-  count: 20
 --- !u!114 &1561043861
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4897,6 +4867,7 @@ MonoBehaviour:
         y: 0
         z: 0
         w: 0
+  otherHand: {fileID: 0}
   anchor: {fileID: 920985513}
   commonCards:
   - {fileID: 11400000, guid: fa5e7652ee093c14a8d8605bef78b7d5, type: 2}
@@ -5553,6 +5524,7 @@ MonoBehaviour:
         y: 0
         z: 0
         w: 0
+  otherHand: {fileID: 0}
   anchor: {fileID: 818177237}
   indexPos: {fileID: 906455079}
   cardInHandGO: {fileID: 0}

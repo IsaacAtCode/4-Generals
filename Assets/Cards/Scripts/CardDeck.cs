@@ -17,6 +17,7 @@ namespace Jesus.Hands
 
 		[Header("Hand")]
 		public Hand hand;
+		public GameObject otherHand;
 		public GameObject anchor;
 
 		[Header("Draw")]
@@ -24,7 +25,6 @@ namespace Jesus.Hands
 		public List<CardSO> rareCards;
 		public List<CardSO> superRareCards;
 		public int count = 20;
-
 
 		public List<CardSO> drawPile;
 
@@ -57,7 +57,6 @@ namespace Jesus.Hands
 			{
 				RemoveCard(0);
 			}
-
 
 			if (isDirty)
 			{
@@ -163,7 +162,6 @@ namespace Jesus.Hands
 
 		public List<GameObject> GenerateCards()
 		{
-
 			List<GameObject> cardGOs = new List<GameObject>();
 			playerDeck = new GameObject("Deck");
 			playerDeck.transform.parent = anchor.transform;
@@ -189,7 +187,6 @@ namespace Jesus.Hands
 
 		private void SeperateCards()
 		{
-			int cardsToSpawn = cards.Count;
 			float widthOfAllCards = 0;
 
 			foreach (GameObject card in cardObjects)
@@ -212,7 +209,7 @@ namespace Jesus.Hands
 		{
 			foreach (GameObject card in cardObjects)
 			{
-				Vector3 targetPos = mainCamera.transform.position;
+				Vector3 targetPos = (mainCamera.transform.position + otherHand.transform.position) / 2;
 
 
 				card.transform.LookAt(targetPos);
@@ -240,6 +237,7 @@ namespace Jesus.Hands
 				return false;
 			}
 		}
+
 		#endregion
 
 		#region Draw Pile
