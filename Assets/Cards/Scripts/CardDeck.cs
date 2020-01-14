@@ -17,6 +17,7 @@ namespace Jesus.Hands
 
 		[Header("Hand")]
 		public Hand hand;
+        public GameObject handGO;
 		public GameObject otherHand;
 		public GameObject anchor;
 
@@ -207,12 +208,29 @@ namespace Jesus.Hands
 
 		private void RotateCards()
 		{
-			foreach (GameObject card in cardObjects)
+            Vector3 otherHandPos = new Vector3 (otherHand.transform.position.x, otherHand.transform.position.y, otherHand.transform.position.z);
+            Vector3 camPos = mainCamera.transform.position;
+
+
+            if (playerDeck !=  null)
+            {
+                if (otherHand.activeInHierarchy == true)
+                {
+                    playerDeck.transform.LookAt(otherHandPos);
+
+                }
+                else
+                {
+                    playerDeck.transform.LookAt(camPos);
+                }  
+            }
+
+
+           
+
+            foreach (GameObject card in cardObjects)
 			{
-				Vector3 targetPos = (mainCamera.transform.position + otherHand.transform.position) / 2;
-
-
-				card.transform.LookAt(targetPos);
+				card.transform.LookAt(camPos);
 				card.transform.Rotate(-90, 0, 0);
 			}
 		}

@@ -16,7 +16,6 @@ namespace Jesus.Hands
 
 		//Right Hand
 		public CardHand selectionHand;
-		public Card selectedCard;
 
 		public Controller controller;
 		public Frame frame;
@@ -44,7 +43,7 @@ namespace Jesus.Hands
 
 			if (Input.GetKeyDown(KeyCode.H) && selectionHand.cardInHandGO != null)
 			{
-				SwapCards(selectedCard.cardInfo);
+				SwapCards();
 			}			 
 		}
 
@@ -68,14 +67,14 @@ namespace Jesus.Hands
 
 		//AddtoHand
 
-		public void SwapCards(CardSO cardInDeck)
+		public void SwapCards()
 		{
 			CardSO cardInHand = selectionHand.cardInHandInfo;
 
 			selectionHand.EmptyHand();
-			deckHand.RemoveCard(cardInDeck);
+			deckHand.RemoveCard(selectionHand.selectedCard.cardInfo);
 
-			selectionHand.SpawnCard(cardInDeck);
+			selectionHand.SpawnCard(selectionHand.selectedCard.cardInfo);
 			deckHand.AddCard(cardInHand);
 		}
 

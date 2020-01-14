@@ -15,9 +15,9 @@ public class CameraMove : MonoBehaviour
 
     private void Start()
     {
-        transform.position = BattleGrid.position;
-        transform.rotation = BattleGrid.rotation;
-        camPos = CameraPosition.BattleGrid;
+        
+        camPos = CameraPosition.Deck;
+        StartCoroutine(LerpToPosition(0, Deck));
     }
 
     private void Update()
@@ -31,13 +31,11 @@ public class CameraMove : MonoBehaviour
         {
             if (Input.GetKeyDown(KeyCode.W))
             {
-                StartCoroutine(LerpToPosition(moveTime, Enemy));
-                camPos = CameraPosition.Enemy;
+                GoToEnemy();
             }
             else if (Input.GetKeyDown(KeyCode.S))
             {
-                StartCoroutine(LerpToPosition(moveTime, Deck));
-                camPos = CameraPosition.Deck;
+                GoToDeck();
             }
         }
         else if (camPos == CameraPosition.Enemy)
@@ -48,16 +46,14 @@ public class CameraMove : MonoBehaviour
             }
             else if (Input.GetKeyDown(KeyCode.S))
             {
-                StartCoroutine(LerpToPosition(moveTime, BattleGrid));
-                camPos = CameraPosition.BattleGrid;
+                GoToBattleGrid();
             }
         }
         else if (camPos == CameraPosition.Deck)
         {
             if (Input.GetKeyDown(KeyCode.W))
             {
-                StartCoroutine(LerpToPosition(moveTime, BattleGrid));
-                camPos = CameraPosition.BattleGrid;
+                GoToBattleGrid();
             }
             else if (Input.GetKeyDown(KeyCode.S))
             {
@@ -65,6 +61,24 @@ public class CameraMove : MonoBehaviour
             }
         }
 
+    }
+
+    public void GoToDeck()
+    {
+        StartCoroutine(LerpToPosition(moveTime, Deck));
+        camPos = CameraPosition.Deck;
+    }
+
+    public void GoToBattleGrid()
+    {
+        StartCoroutine(LerpToPosition(moveTime, BattleGrid));
+        camPos = CameraPosition.BattleGrid;
+    }
+
+    public void GoToEnemy()
+    {
+        StartCoroutine(LerpToPosition(moveTime, Enemy));
+        camPos = CameraPosition.Enemy;
     }
 
     IEnumerator LerpToPosition(float lerpSpeed, Transform newPosition)

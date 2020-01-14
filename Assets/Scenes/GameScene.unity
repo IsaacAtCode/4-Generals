@@ -149,7 +149,7 @@ MonoBehaviour:
     type: 3}
   m_PrefabInstance: {fileID: 566028116}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
+  m_GameObject: {fileID: 1774565324}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 9ea79be653ce14db8969d7225d95ec6c, type: 3}
@@ -339,7 +339,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 276913370}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 35, z: -40}
+  m_LocalPosition: {x: 0, y: 45, z: 1}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 393644049}
@@ -351,7 +351,7 @@ MonoBehaviour:
     type: 3}
   m_PrefabInstance: {fileID: 1419682507}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
+  m_GameObject: {fileID: 890819823}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 9ea79be653ce14db8969d7225d95ec6c, type: 3}
@@ -2101,6 +2101,12 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &890819823 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 196280, guid: 23f2cce114628a448bfeaae171b4c0c0,
+    type: 3}
+  m_PrefabInstance: {fileID: 1419682507}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &906455078
 GameObject:
   m_ObjectHideFlags: 0
@@ -4203,7 +4209,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   deckHand: {fileID: 0}
   selectionHand: {fileID: 0}
-  selectedCard: {fileID: 0}
   frame:
     Id: 0
     Timestamp: 0
@@ -4867,7 +4872,8 @@ MonoBehaviour:
         y: 0
         z: 0
         w: 0
-  otherHand: {fileID: 0}
+  handGO: {fileID: 890819823}
+  otherHand: {fileID: 1774565324}
   anchor: {fileID: 920985513}
   commonCards:
   - {fileID: 11400000, guid: fa5e7652ee093c14a8d8605bef78b7d5, type: 2}
@@ -5527,6 +5533,7 @@ MonoBehaviour:
   otherHand: {fileID: 0}
   anchor: {fileID: 818177237}
   indexPos: {fileID: 906455079}
+  selectedCard: {fileID: 0}
   cardInHandGO: {fileID: 0}
   cardInHandInfo: {fileID: 0}
   blankCard: {fileID: 5744155827561160969, guid: 3dd3ae73ea7bf234a95bbc62861cf5d2,
@@ -5565,6 +5572,12 @@ Transform:
   m_Father: {fileID: 1666817449}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1774565324 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 166188, guid: c8515ebee271c0649b9db1321f3026a4,
+    type: 3}
+  m_PrefabInstance: {fileID: 566028116}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1818052836
 GameObject:
   m_ObjectHideFlags: 0

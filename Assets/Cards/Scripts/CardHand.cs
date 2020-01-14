@@ -14,6 +14,9 @@ namespace Jesus.Hands
 		public GameObject anchor;
 		public Transform indexPos;
 
+        [Header("Deck")]
+        public Card selectedCard;
+
 		[Header("Card in Hand")]
 		public GameObject cardInHandGO;
 		public CardSO cardInHandInfo;
@@ -29,7 +32,7 @@ namespace Jesus.Hands
 		{
 			if (Input.GetKeyDown(KeyCode.O))
 			{
-				SpawnCard(GetComponent<CardHolder>().selectedCard.cardInfo);
+				SpawnCard(selectedCard.cardInfo);
 			}
 			if (Input.GetKeyDown(KeyCode.P))
 			{
