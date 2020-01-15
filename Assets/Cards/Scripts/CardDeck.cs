@@ -26,7 +26,7 @@ namespace Jesus.Hands
 		public List<CardSO> commonCards;
 		public List<CardSO> rareCards;
 		public List<CardSO> superRareCards;
-		public int count = 20;
+		public int count = 40;
 
 		public List<CardSO> drawPile;
 
@@ -46,7 +46,7 @@ namespace Jesus.Hands
 			}
 
 			drawPile = GenerateDrawPile();
-			cardObjects = GenerateCards();
+			cardObjects = SelectCards();
 		}
 
 		private void Update()
@@ -175,7 +175,7 @@ namespace Jesus.Hands
 		{
 			if (!playerDeck)
 			{
-				cardObjects = GenerateCards();
+				cardObjects = SelectCards();
 				SeperateCards();
 			}
 			else
@@ -195,14 +195,14 @@ namespace Jesus.Hands
 			if (isDirty)
 			{
 				Destroy(playerDeck);
-				cardObjects = GenerateCards();
+				cardObjects = SelectCards();
 				SeperateCards();
 			}
 
 			isDirty = false;
 		}
 
-		public List<GameObject> GenerateCards()
+		public List<GameObject> SelectCards()
 		{
 			List<GameObject> cardGOs = new List<GameObject>();
 			playerDeck = new GameObject("Deck");

@@ -12,9 +12,9 @@ namespace Jesus.Hands
 		public Hand hand;
 		public GameObject otherHand;
 
-
-		public GameObject frontAnchor;
-		public GameObject backAnchor;
+		public GameObject anchor;
+		public Transform frontSpawn;
+		public Transform backSpawn;
 		public Transform indexPos;
 
 		[Header("Deck")]
@@ -25,6 +25,7 @@ namespace Jesus.Hands
 		[Header("Card in Hand")]
 		public GameObject cardInHandGO;
 		public CardSO cardInHandInfo;
+		public bool inHand;
 
 		private int layer = 10;
 		private int layermask = 1 << 10;
@@ -32,36 +33,41 @@ namespace Jesus.Hands
 		[Header("Other")]
 		public GameObject blankCard;
 		public GameObject mainCamera;
+		public CardSO testSO;
 
 		private void Update()
 		{
 			if (Input.GetKeyDown(KeyCode.Z))
 			{
-				SpawnCard(selectedCard.cardInfo);
+				SelectCard(testSO);
 			}
 			if (Input.GetKeyDown(KeyCode.P))
 			{
-				EmptyHand();
+				ClearHand();
 			}
 
+
+			//if (cardInHandGO)
+			//{
+			//	Vector3 targetPos = mainCamera.transform.position;
+
+			//	cardInHandGO.transform.LookAt(targetPos);
+			//	cardInHandGO.transform.Rotate(-90, 0, 0);
+			//}
+
+			GetCardFromDeck();
 
 			if (cardInHandGO)
 			{
-				Vector3 targetPos = mainCamera.transform.position;
-
-				cardInHandGO.transform.LookAt(targetPos);
-				cardInHandGO.transform.Rotate(-90, 0, 0);
+				MoveCard();
 			}
-
-			SelectCardFromDeck();
-
 		}
 
-		public void SpawnCard(CardSO cardInfo)
+		public void SelectCard(CardSO cardInfo)
 		{
 			if (!cardInHandGO)
 			{
-				cardInHandGO = Instantiate(blankCard, frontAnchor.transform.position, Quaternion.identity, frontAnchor.transform);
+				cardInHandGO = Instantiate(blankCard, anchor.transform.position, Quaternion.identity);
 				cardInHandGO.name = cardInfo.name;
 				cardInHandGO.tag = "Card";
 				cardInHandGO.layer = 10;
@@ -70,6 +76,7 @@ namespace Jesus.Hands
 				card.PopulateCard();
 
 				cardInHandInfo = cardInfo;
+
 			}
 			else
 			{
@@ -77,20 +84,42 @@ namespace Jesus.Hands
 			}
 		}
 
-		public void EmptyHand()
+		private void MoveCard()
+		{
+			if (inHand)
+			{
+				cardInHandGO.transform.parent = frontSpawn;
+				cardInHandGO.transform.localRotation = Quaternion.identity;
+				cardInHandGO.transform.localPosition = Vector3.zero;
+				cardInHandGO.transform.localScale = Vector3.one;
+			}
+			else
+			{
+				cardInHandGO.transform.parent = backSpawn;
+				cardInHandGO.transform.localRotation = Quaternion.identity;
+				cardInHandGO.transform.localPosition = Vector3.zero;
+				cardInHandGO.transform.localScale = Vector3.one;
+
+			}
+		}
+
+
+
+		public void HideHand()
 		{
 			if (cardInHandGO)
 			{
 				Destroy(cardInHandGO);
-			}
-			else
-			{
-				Debug.Log("Nothing to destroy");
-			}
-			
+			}			
 		}
 
-		public void SelectCardFromDeck()
+		public void ClearHand()
+		{
+			Destroy(cardInHandGO);
+			cardInHandInfo = null;
+		}
+
+		public void GetCardFromDeck()
 		{
 			RaycastHit hit;
 			Card currCard;

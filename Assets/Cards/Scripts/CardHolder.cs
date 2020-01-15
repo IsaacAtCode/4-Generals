@@ -19,6 +19,9 @@ namespace Jesus.Hands
 		[HideInInspector]
 		public CardHand selectionHand;
 
+		[HideInInspector]
+		public CameraMove cm;
+
 		public Controller controller;
 		public Frame frame;
 
@@ -26,10 +29,11 @@ namespace Jesus.Hands
 		{
 			controller = new Controller();
 
+			cm = GetComponent<CameraMove>();
 			deckHand = GetComponent<CardDeck>();
 			selectionHand = GetComponent<CardHand>();
 
-			deckHand.otherHand = selectionHand.frontAnchor;
+			deckHand.otherHand = selectionHand.anchor;
 			selectionHand.otherHand = deckHand.anchor;
 		}
 
@@ -44,6 +48,7 @@ namespace Jesus.Hands
 			}
 
 			ShowDeck();
+			ShowHand();
 		}
 
 
@@ -64,7 +69,7 @@ namespace Jesus.Hands
 
 		private bool OpenPalm(Hand hand)
 		{
-			if (hand.GrabStrength < 0.5)
+			if (hand.GrabStrength < 0.6f)
 			{
 				return true;
 			}
@@ -76,7 +81,7 @@ namespace Jesus.Hands
 
 		private Facing HandDirection(Hand hand)
 		{
-			if (hand.PalmNormal.y > 0.5)
+			if (hand.PalmNormal.y > 0.5 || hand.PalmNormal.z > 0f)
 			{
 				return Facing.Up;
 			}
@@ -104,35 +109,31 @@ namespace Jesus.Hands
 
 		private void ShowHand()
 		{
-			if (OpenPalm(selectionHand.hand) == true && HandDirection(selectionHand.hand) == Facing.Up)
+			if (HandDirection(selectionHand.hand) == Facing.Up && OpenPalm(selectionHand.hand))
 			{
-				if (selectionHand.cardInHandGO == null)
-				{
-					selectionHand.SpawnCard(selectionHand.cardInHandInfo);
-				}
+				selectionHand.inHand = true;
 			}
-			else if (!OpenPalm(selectionHand.hand) || HandDirection(selectionHand.hand) == Facing.Down)
+			else if (HandDirection(selectionHand.hand) == Facing.Down)
 			{
-				selectionHand.EmptyHand();
+				selectionHand.inHand = false;
+			}
+			else if (!OpenPalm(selectionHand.hand))
+			{
+				selectionHand.inHand = false;
+			}
+
+
+
+			if (selectionHand.cardInHandInfo && !selectionHand.cardInHandGO) //If there was a card in the hand, but not the game object
+			{
+					selectionHand.SelectCard(selectionHand.cardInHandInfo);
 			}
 
 		}
 
 
-		//AddToDeck
 
-		//AddtoHand
 
-		//public void SwapCards()
-		//{
-		//	CardSO cardInHand = selectionHand.cardInHandInfo;
-
-		//	selectionHand.EmptyHand();
-		//	deckHand.RemoveCard(selectionHand.selectedCard.cardInfo);
-
-		//	selectionHand.SpawnCard(selectionHand.selectedCard.cardInfo);
-		//	deckHand.AddCard(cardInHand);
-		//}
 	}
 
 	public enum Facing
@@ -140,8 +141,5 @@ namespace Jesus.Hands
 		Up,
 		Down,
 	}
-
-
-
 
 }
