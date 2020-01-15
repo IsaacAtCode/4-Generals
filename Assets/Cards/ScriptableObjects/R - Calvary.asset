@@ -13,10 +13,7 @@ MonoBehaviour:
   m_Name: R - Calvary
   m_EditorClassIdentifier: 
   name: Calvary
-  description: 
-  image: {fileID: 0}
+  image: {fileID: 21300000, guid: 961df74a07c22c74b994f093f1da9838, type: 3}
   rarity: 1
   health: 13
   damage: 7
-  buff: 0
-  buffImage: {fileID: 0}

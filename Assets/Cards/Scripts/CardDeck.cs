@@ -265,13 +265,6 @@ namespace Jesus.Hands
 			}
 		}
 
-		public void ShrinkCards()
-		{
-			foreach (GameObject card in cardObjects)
-			{
-				card.GetComponent<Card>().ScaleCard(0.75f);
-			}
-		}
 
 		#endregion
 

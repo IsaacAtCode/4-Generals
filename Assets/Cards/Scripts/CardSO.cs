@@ -9,7 +9,6 @@ namespace Jesus.Cards
 	public class CardSO : ScriptableObject
 	{
 		public new string name;
-		public string description;
 		public Sprite image;
 
 		public Rarity rarity;

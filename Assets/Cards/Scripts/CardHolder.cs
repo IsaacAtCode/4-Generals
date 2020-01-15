@@ -29,7 +29,7 @@ namespace Jesus.Hands
 			deckHand = GetComponent<CardDeck>();
 			selectionHand = GetComponent<CardHand>();
 
-			deckHand.otherHand = selectionHand.anchor;
+			deckHand.otherHand = selectionHand.frontAnchor;
 			selectionHand.otherHand = deckHand.anchor;
 		}
 

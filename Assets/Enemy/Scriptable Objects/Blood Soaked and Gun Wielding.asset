@@ -9,11 +9,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1625677a5bbf2444f80609df88bec7ef, type: 3}
-  m_Name: C - Pikeman
+  m_Script: {fileID: 11500000, guid: 4ccc04fc0dd2fff4fa01492d7cbab6eb, type: 3}
+  m_Name: Blood Soaked and Gun Wielding
   m_EditorClassIdentifier: 
-  name: Pikeman
-  image: {fileID: 21300000, guid: f32d90796027a214f8982937e785a694, type: 3}
-  rarity: 0
-  health: 7
-  damage: 3
+  name: Blood Soaked and Gun Wielding
+  damage: 80
+  health: 80
+  face: {fileID: 21300000, guid: 03747216faa5d044aa93b918b858c25d, type: 3}
+  color: {r: 0, g: 0, b: 0, a: 0}

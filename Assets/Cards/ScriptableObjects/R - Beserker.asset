@@ -13,10 +13,7 @@ MonoBehaviour:
   m_Name: R - Beserker
   m_EditorClassIdentifier: 
   name: Beserker
-  description: 
-  image: {fileID: 0}
+  image: {fileID: 21300000, guid: b30dfef5f5ec47845bc0ab0782447542, type: 3}
   rarity: 1
   health: 7
   damage: 13
-  buff: 0
-  buffImage: {fileID: 0}

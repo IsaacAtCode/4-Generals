@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: Joris Bohnson
   m_EditorClassIdentifier: 
   name: Joris Bohnson
-  damage: 100
-  health: 100
+  damage: 75
+  health: 90
+  face: {fileID: 21300000, guid: 6ab4a36acb03f074ca0154084c05c628, type: 3}
   color: {r: 0.91324806, g: 1, b: 0, a: 0}

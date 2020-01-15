@@ -13,10 +13,7 @@ MonoBehaviour:
   m_Name: SR - Elephant
   m_EditorClassIdentifier: 
   name: Elephant
-  description: 
-  image: {fileID: 0}
+  image: {fileID: 21300000, guid: 60f80fba005ef0844aabf220c0188b2c, type: 3}
   rarity: 2
   health: 20
   damage: 5
-  buff: 0
-  buffImage: {fileID: 0}

@@ -13,10 +13,7 @@ MonoBehaviour:
   m_Name: R - Knight
   m_EditorClassIdentifier: 
   name: Knight
-  description: Shiny Armour and Sharp Sword
-  image: {fileID: 0}
+  image: {fileID: 21300000, guid: 14c98e3ff20277d4cb4b1ff706438deb, type: 3}
   rarity: 1
   health: 10
   damage: 10
-  buff: 0
-  buffImage: {fileID: 0}

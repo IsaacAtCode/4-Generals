@@ -11,14 +11,16 @@ namespace Jesus.Hands
 	{
 		public Hand hand;
 		public GameObject otherHand;
-		public GameObject anchor;
+
+
+		public GameObject frontAnchor;
+		public GameObject backAnchor;
 		public Transform indexPos;
 
 		[Header("Deck")]
-		public Card selectedCard;
-		public Color highlightColor;
-		Material originalMaterial, tempMaterial;
-		Renderer rend = null;
+		public Card selectedCard = null;
+		public float selectedScale = 1.25f;
+		Vector3 originalSize, tempSize;
 
 		[Header("Card in Hand")]
 		public GameObject cardInHandGO;
@@ -33,7 +35,7 @@ namespace Jesus.Hands
 
 		private void Update()
 		{
-			if (Input.GetKeyDown(KeyCode.O))
+			if (Input.GetKeyDown(KeyCode.Z))
 			{
 				SpawnCard(selectedCard.cardInfo);
 			}
@@ -59,7 +61,7 @@ namespace Jesus.Hands
 		{
 			if (!cardInHandGO)
 			{
-				cardInHandGO = Instantiate(blankCard, anchor.transform.position, Quaternion.identity, anchor.transform);
+				cardInHandGO = Instantiate(blankCard, frontAnchor.transform.position, Quaternion.identity, frontAnchor.transform);
 				cardInHandGO.name = cardInfo.name;
 				cardInHandGO.tag = "Card";
 				cardInHandGO.layer = 10;
@@ -91,51 +93,53 @@ namespace Jesus.Hands
 		public void SelectCardFromDeck()
 		{
 			RaycastHit hit;
-			Renderer currRend;
+			Card currCard;
 
 			Debug.DrawRay(indexPos.position, indexPos.forward, Color.red);
 
 			if (Physics.Raycast(indexPos.position, indexPos.forward, out hit, Mathf.Infinity) && hit.transform.CompareTag("Card"))
 			{
+				currCard = hit.transform.gameObject.GetComponent<Card>();
 
-				Debug.Log(hit.transform.gameObject.name);
-
-				currRend = hit.transform.GetComponentInChildren<Renderer>();
-
-				if (currRend == rend)
+				if (currCard == selectedCard)
 				{
 					return;
 				}
 
-				if (currRend && currRend != rend)
+				if (currCard && currCard != selectedCard)
 				{
-					if (rend)
+					if (selectedCard)
 					{
-						rend.sharedMaterial = originalMaterial;
+						selectedCard.transform.localScale = originalSize;
 					}
 				}
 
-				if (currRend)
-					rend = currRend;
+				if (currCard)
+				{
+					selectedCard = currCard;
+				}
 				else
+				{
 					return;
+				}
 
-				originalMaterial = rend.sharedMaterial;
+				originalSize = selectedCard.transform.localScale;
 
-				tempMaterial = new Material(originalMaterial);
-				rend.material = tempMaterial;
-				rend.material.color = highlightColor;
+				tempSize = new Vector3(selectedScale,selectedScale,selectedScale);
+				selectedCard.transform.localScale = tempSize;
 			}
 			else
 			{
-				if (rend)
+				if (selectedCard)
 				{
-					rend.sharedMaterial = originalMaterial;
-					rend = null;
+					selectedCard.transform.localScale = originalSize;
+					selectedCard = null;
 				}
 			}
 
+
 		}
+
 	}
 }
 

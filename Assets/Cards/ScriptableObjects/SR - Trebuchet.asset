@@ -13,10 +13,7 @@ MonoBehaviour:
   m_Name: SR - Trebuchet
   m_EditorClassIdentifier: 
   name: Trebuchet
-  description: Can launch 90kg projectiles over 300 meters
-  image: {fileID: 0}
+  image: {fileID: 21300000, guid: 26ae79c31abbc874abb70bd4300c708f, type: 3}
   rarity: 2
   health: 5
   damage: 20
-  buff: 0
-  buffImage: {fileID: 0}

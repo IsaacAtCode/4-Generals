@@ -13,10 +13,7 @@ MonoBehaviour:
   m_Name: C - Archer
   m_EditorClassIdentifier: 
   name: Archer
-  description: 
-  image: {fileID: 0}
+  image: {fileID: 21300000, guid: 8d920b4e86136df4da7a3167470ec738, type: 3}
   rarity: 0
   health: 3
   damage: 7
-  buff: 0
-  buffImage: {fileID: 0}
