@@ -216,7 +216,7 @@ namespace Jesus.Hands
 				GameObject cardGO = Instantiate(blankCard, parentVector, Quaternion.identity, playerDeck.transform);
 				cardGO.tag = "Card";
 				cardGOs.Add(cardGO);
-				cardGO.transform.localScale = new Vector3(0.75f, 0.75f * 0.1f, 0.75f);
+				cardGO.transform.localScale = new Vector3(0.75f, 0.75f, 0.75f);
 
 				Card card = cardGO.AddComponent<Card>();
 				card.cardInfo = cardInfo;
@@ -252,7 +252,7 @@ namespace Jesus.Hands
 			Vector3 otherHandPos = otherHand.transform.position;
 			Vector3 camPos = mainCamera.transform.position;
 
-			Vector3 otherHandPosInverse = 2 * playerDeck.transform.position - otherHandPos;
+			Vector3 otherHandPosInverse = Vector3.Reflect(otherHandPos, Vector3.right);
 
 
 			playerDeck.transform.LookAt(otherHandPosInverse);

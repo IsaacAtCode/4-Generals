@@ -62,6 +62,13 @@ namespace Jesus.Cards
 			damageText.text = "";
 		}
 
+		public void OutlineCard(Color color)
+		{
+
+		}
+
+
+
 		public void ScaleCard(float size)
 		{
 			transform.localScale = new Vector3(size, size * 0.1f, size);
