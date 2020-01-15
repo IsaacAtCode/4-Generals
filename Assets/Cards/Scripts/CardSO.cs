@@ -17,16 +17,6 @@ namespace Jesus.Cards
 		public int health;
 		public int damage;
 
-		public Buff buff;
-		public Sprite buffImage;
-	}
-
-	public enum Buff
-	{
-		NoBuff,
-		HealthBoost,
-		DamageBoost,
-		Retaliate,
 	}
 
 	public enum Rarity

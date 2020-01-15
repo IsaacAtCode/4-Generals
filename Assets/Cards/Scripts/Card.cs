@@ -14,7 +14,6 @@ namespace Jesus.Cards
 		public Image cardImage;
 		public Text healthText;
 		public Text damageText;
-		public Image buffImage;
 
 		[Header("Statistics")]
 		public int currentHealth;
@@ -25,17 +24,19 @@ namespace Jesus.Cards
 		private void Start()
 		{
 			GetComponents();
+
+			currentHealth = cardInfo.health;
+			currentDamage = cardInfo.damage;
 		}
 
 		private void GetComponents()
 		{
-			if (transform.GetChild(0).childCount > 0)
+			if (transform.GetChild(1).childCount > 0)
 			{
-				nameText = transform.GetChild(0).GetChild(0).GetComponent<Text>();
-				healthText = transform.GetChild(0).GetChild(1).GetComponent<Text>();
-				damageText = transform.GetChild(0).GetChild(2).GetComponent<Text>();
-				cardImage = transform.GetChild(0).GetChild(3).GetComponent<Image>();
-				buffImage = transform.GetChild(0).GetChild(4).GetComponent<Image>();
+				nameText = transform.GetChild(1).GetChild(0).GetComponent<Text>();
+				healthText = transform.GetChild(1).GetChild(1).GetComponent<Text>();
+				damageText = transform.GetChild(1).GetChild(2).GetComponent<Text>();
+				cardImage = transform.GetChild(1).GetChild(3).GetComponent<Image>();
 			}
 			
 		}
@@ -48,7 +49,6 @@ namespace Jesus.Cards
 			cardImage.sprite = cardInfo.image;
 			healthText.text = cardInfo.health.ToString();
 			damageText.text = cardInfo.damage.ToString();
-			//buffImage = 
 
 			ChangeName(cardInfo.name);
 			ChangeRarity(cardInfo.rarity);
@@ -89,23 +89,25 @@ namespace Jesus.Cards
 
 		private void ChangeRarity(Rarity rarity)
 		{
-			Material mat = this.GetComponent<Renderer>().material;
-
+			Renderer rend = transform.GetChild(0).GetComponent<Renderer>();
+			Material[] mats = rend.materials;
 
 			if (rarity == Rarity.Common)
 			{
-				mat.color = Color.grey;
+				mats[2].color = Color.grey;
 			}
 			else if (rarity == Rarity.Rare)
 			{
-				mat.color = Color.cyan;
-
+				mats[2].color = Color.cyan;
 			}
 			else if (rarity == Rarity.SuperRare)
 			{
-				mat.color = Color.yellow;
-
+				mats[2].color = Color.yellow;
 			}
+
+
+			rend.materials = mats;
+
 		}
 	}
 }

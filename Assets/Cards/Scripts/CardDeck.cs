@@ -12,12 +12,13 @@ namespace Jesus.Hands
 		[Header("Deck")]
 		public List<CardSO> cards;
 		public List<GameObject> cardObjects;
-		private GameObject playerDeck; // Parent Object
+		public GameObject playerDeck; // Parent Object
 		public int maxCards = 6;
+
 
 		[Header("Hand")]
 		public Hand hand;
-        public GameObject handGO;
+		public GameObject handGO;
 		public GameObject otherHand;
 		public GameObject anchor;
 
@@ -45,13 +46,14 @@ namespace Jesus.Hands
 			}
 
 			drawPile = GenerateDrawPile();
+			cardObjects = GenerateCards();
 		}
 
 		private void Update()
 		{
 			if (Input.GetKeyDown(KeyCode.L))
 			{
-				DrawCard();
+				DrawCards(2);
 			}
 
 			if (Input.GetKeyDown(KeyCode.K))
@@ -59,12 +61,14 @@ namespace Jesus.Hands
 				RemoveCard(0);
 			}
 
-			if (isDirty)
+
+			if (playerDeck != null)
 			{
 				RefreshDeck();
+				RotateCards();
 			}
+			
 
-			RotateCards();
 		}
 
 		#region Deck
@@ -136,6 +140,32 @@ namespace Jesus.Hands
 			}
 		}
 
+		public void DrawCards(int cardsToDraw)
+		{
+			for (int i = 0; i < cardsToDraw; i++)
+			{
+				if (drawPile.Count > 0)
+				{
+					if (cards.Count <= maxCards - 1)
+					{
+						CardSO drawnCard = drawPile[Random.Range(0, drawPile.Count)];
+						drawPile.Remove(drawnCard);
+						AddCard(drawnCard);
+					}
+					else
+					{
+						Debug.Log("Cannot deal anymore");
+						break;
+					}
+				}
+				else
+				{
+					Debug.Log("Drawn All Cards");
+					break;
+				}
+			}			
+		}
+
 
 		#endregion
 
@@ -143,22 +173,33 @@ namespace Jesus.Hands
 
 		public void ShowDeck()
 		{
-			anchor.SetActive(true);
-			cardObjects = GenerateCards();
-			SeperateCards();
+			if (!playerDeck)
+			{
+				cardObjects = GenerateCards();
+				SeperateCards();
+			}
+			else
+			{
+				Debug.Log("Already Deck in hand");
+			}
+			
 		}
 
 		public void HideDeck()
 		{
-			Destroy(playerDeck);
-			anchor.SetActive(false);
+			DestroyImmediate(playerDeck);
 		}
 
 		public void RefreshDeck()
 		{
-			Destroy(playerDeck);
-			cardObjects = GenerateCards();
-			SeperateCards();
+			if (isDirty)
+			{
+				Destroy(playerDeck);
+				cardObjects = GenerateCards();
+				SeperateCards();
+			}
+
+			isDirty = false;
 		}
 
 		public List<GameObject> GenerateCards()
@@ -208,27 +249,23 @@ namespace Jesus.Hands
 
 		private void RotateCards()
 		{
-            Vector3 otherHandPos = new Vector3 (otherHand.transform.position.x, otherHand.transform.position.y, otherHand.transform.position.z);
-            Vector3 camPos = mainCamera.transform.position;
+			Vector3 otherHandPos = new Vector3 (otherHand.transform.position.x, otherHand.transform.position.y, otherHand.transform.position.z);
+			Vector3 camPos = mainCamera.transform.position;
 
+			if (playerDeck !=  null)
+			{
+				if (otherHand.activeInHierarchy == true)
+				{
+					playerDeck.transform.LookAt(otherHandPos);
 
-            if (playerDeck !=  null)
-            {
-                if (otherHand.activeInHierarchy == true)
-                {
-                    playerDeck.transform.LookAt(otherHandPos);
+				}
+				else
+				{
+					playerDeck.transform.LookAt(camPos);
+				}  
+			}
 
-                }
-                else
-                {
-                    playerDeck.transform.LookAt(camPos);
-                }  
-            }
-
-
-           
-
-            foreach (GameObject card in cardObjects)
+			foreach (GameObject card in cardObjects)
 			{
 				card.transform.LookAt(camPos);
 				card.transform.Rotate(-90, 0, 0);

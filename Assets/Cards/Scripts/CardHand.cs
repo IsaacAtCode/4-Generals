@@ -14,8 +14,8 @@ namespace Jesus.Hands
 		public GameObject anchor;
 		public Transform indexPos;
 
-        [Header("Deck")]
-        public Card selectedCard;
+		[Header("Deck")]
+		public Card selectedCard;
 
 		[Header("Card in Hand")]
 		public GameObject cardInHandGO;
@@ -68,7 +68,6 @@ namespace Jesus.Hands
 				card.PopulateCard();
 
 				cardInHandInfo = cardInfo;
-
 			}
 			else
 			{
