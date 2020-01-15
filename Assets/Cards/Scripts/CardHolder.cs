@@ -31,8 +31,6 @@ namespace Jesus.Hands
 
 			deckHand.otherHand = selectionHand.anchor;
 			selectionHand.otherHand = deckHand.anchor;
-
-
 		}
 
 		private void Update()

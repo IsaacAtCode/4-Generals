@@ -16,6 +16,9 @@ namespace Jesus.Hands
 
 		[Header("Deck")]
 		public Card selectedCard;
+		public Color highlightColor;
+		Material originalMaterial, tempMaterial;
+		Renderer rend = null;
 
 		[Header("Card in Hand")]
 		public GameObject cardInHandGO;
@@ -51,9 +54,6 @@ namespace Jesus.Hands
 			SelectCardFromDeck();
 
 		}
-
-
-
 
 		public void SpawnCard(CardSO cardInfo)
 		{
@@ -91,23 +91,51 @@ namespace Jesus.Hands
 		public void SelectCardFromDeck()
 		{
 			RaycastHit hit;
-
+			Renderer currRend;
 
 			Debug.DrawRay(indexPos.position, indexPos.forward, Color.red);
 
-			if (Physics.Raycast(indexPos.position, indexPos.forward, out hit, Mathf.Infinity, ~layermask) && hit.transform.tag == "Card")
+			if (Physics.Raycast(indexPos.position, indexPos.forward, out hit, Mathf.Infinity) && hit.transform.CompareTag("Card"))
 			{
+
 				Debug.Log(hit.transform.gameObject.name);
 
-			//	selectedCard = hit.transform.gameObject.GetComponent<Card>();
-			//	if (selectedCard.inDeck)
-			//	{
-			//		selectedCard.ScaleCard(1f);
-			//	}
+				currRend = hit.transform.GetComponentInChildren<Renderer>();
+
+				if (currRend == rend)
+				{
+					return;
+				}
+
+				if (currRend && currRend != rend)
+				{
+					if (rend)
+					{
+						rend.sharedMaterial = originalMaterial;
+					}
+				}
+
+				if (currRend)
+					rend = currRend;
+				else
+					return;
+
+				originalMaterial = rend.sharedMaterial;
+
+				tempMaterial = new Material(originalMaterial);
+				rend.material = tempMaterial;
+				rend.material.color = highlightColor;
+			}
+			else
+			{
+				if (rend)
+				{
+					rend.sharedMaterial = originalMaterial;
+					rend = null;
+				}
 			}
 
 		}
-
-
 	}
 }
+
