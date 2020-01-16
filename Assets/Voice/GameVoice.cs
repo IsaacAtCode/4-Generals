@@ -39,6 +39,21 @@ public class GameVoice : MonoBehaviour
         actions.Add("draw seven", DrawSeven);
         actions.Add("draw seven cards", DrawSeven);
 
+        actions.Add("add one", DrawOne);
+        actions.Add("add one card", DrawOne);
+        actions.Add("add two", DrawTwo);
+        actions.Add("add two cards", DrawTwo);
+        actions.Add("add three", DrawThree);
+        actions.Add("add three cards", DrawThree);
+        actions.Add("add four", DrawFour);
+        actions.Add("add four cards", DrawFour);
+        actions.Add("add five", DrawFive);
+        actions.Add("add five cards", DrawFive);
+        actions.Add("add six", DrawSix);
+        actions.Add("add six cards", DrawSix);
+        actions.Add("add seven", DrawSeven);
+        actions.Add("add seven cards", DrawSeven);
+
         //Discard
         actions.Add("discard", Discard);
         actions.Add("destroy", Discard);
@@ -48,6 +63,7 @@ public class GameVoice : MonoBehaviour
         //select cards
         actions.Add("place", SelectCard);
         actions.Add("place down", SelectCard);
+        actions.Add("pick up", SelectCard);
         actions.Add("select", SelectCard);
         actions.Add("choose", SelectCard);
         actions.Add("swap", SelectCard);
@@ -77,6 +93,10 @@ public class GameVoice : MonoBehaviour
         //fighting
         actions.Add("fight", StartFight);
         actions.Add("start fight", StartFight);
+        actions.Add("attack", StartFight);
+        actions.Add("attack boss", StartFight);
+        actions.Add("attack enemy", StartFight);
+
 
 
         //Menus
