@@ -70,7 +70,7 @@ namespace Jesus.Hands
 		}
 
         //Select Card
-        public void SelectCard()
+        public void SelectCard() //Goes into hand
         {
             if (cm.camPos == CameraPosition.Deck)
             {
@@ -90,15 +90,17 @@ namespace Jesus.Hands
                 if (selectionHand.cardInHandInfo) //If card is in the hand, swap instead
                 {
                     SwapCardToBoard(selectionHand.cardInHandInfo, selectionHand.selectedBoard.cardInfo);
+
+                    board.PopulateBoard();
                 }
                 else if (!selectionHand.cardInHandInfo)
                 {
                     selectionHand.ClearHand();
                     //deckHand.RemoveCard(selectionHand.selectedCard.cardInfo);
                     selectionHand.SelectCard(selectionHand.selectedBoard.cardInfo);
+
+                    board.PopulateBoard();
                 }
-
-
             }
 
         }
@@ -133,7 +135,7 @@ namespace Jesus.Hands
             selectionHand.ClearHand();
         }
 
-        public void DrawCard(int count)
+        public void DrawCards(int count)
         {
             deckHand.DrawCards(count);
         }
@@ -146,7 +148,15 @@ namespace Jesus.Hands
             }
             else if (!selectionHand.cardInHandInfo)
             {
-                deckHand.RemoveCard(selectionHand.selectedCard.cardInfo);
+                if (cm.camPos == CameraPosition.Deck)
+                {
+                    deckHand.RemoveCard(selectionHand.selectedCard.cardInfo);
+
+                }
+                else if (cm.camPos == CameraPosition.BattleGrid)
+                {
+                    selectionHand.selectedBoard.RemoveCard();
+                }
             }
             else
             {

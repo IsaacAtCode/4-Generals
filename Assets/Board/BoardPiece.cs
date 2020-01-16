@@ -12,9 +12,18 @@ public class BoardPiece : MonoBehaviour
 
     public GameObject cardObject;
 
+    private void Start()
+    {
+        if (cardInfo)
+        {
+            SpawnCard();
+        }
+    }
+
+
     public void SpawnCard()
     {
-        if (!cardInfo)
+        if (cardInfo)
         {
             Vector3 offsetPos = new Vector3(transform.position.x, transform.position.y + offset, transform.position.z);
 
@@ -29,9 +38,8 @@ public class BoardPiece : MonoBehaviour
         }
         else
         {
-            Debug.Log("Already filled");
+            Debug.Log("Cannot spawn - no info");
         }
-
     }
 
     public void RemoveCard()

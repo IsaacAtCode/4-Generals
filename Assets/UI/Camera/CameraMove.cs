@@ -15,11 +15,14 @@ public class CameraMove : MonoBehaviour
 
 	private void Start()
 	{
-        ChangeFocus();
+        ChangeFocus(camPos);
 	}
 
-	private void ChangeFocus()
+	public void ChangeFocus(CameraPosition newPos)
 	{
+        camPos = newPos;
+
+
         if (camPos == CameraPosition.Deck)
         {
             GoToDeck();

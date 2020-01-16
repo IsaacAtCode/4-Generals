@@ -5,16 +5,37 @@ using UnityEngine.UI;
 
 public class Enemy : MonoBehaviour
 {
-	public List<EnemySO> enemies;
+    [Header("Enemies")]
+	public List<EnemySO> enemyList;
+    private List<EnemySO> enemies;
+    public EnemySO enemyInfo;
 
+    [Header("Cmponents")]
 	public GameObject enemyBase;
 	public Text nameText;
 	public Image faceImage;
 
+    public bool isAlive;
+
 	private void Start()
 	{
-		PopulateEnemy(enemies[Random.Range(0, enemies.Count)]);
+        enemies = new List<EnemySO>(enemyList);
+
+
+        Spawn();
 	}
+
+    public void Spawn()
+    {
+
+        enemyInfo = enemies[Random.Range(0, enemies.Count)];
+
+        PopulateEnemy(enemyInfo);
+
+        isAlive = true;
+
+    }
+
 
 
 
@@ -23,7 +44,6 @@ public class Enemy : MonoBehaviour
 		enemyBase.GetComponent<Renderer>().material.color = stats.color;
 		nameText.text = stats.name;
 		faceImage.sprite = stats.face;
-
 	}
 	
 }

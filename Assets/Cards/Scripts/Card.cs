@@ -23,10 +23,19 @@ namespace Jesus.Cards
 
 		private void Start()
 		{
-			GetComponents();
+            GetComponents();
 
-			currentHealth = cardInfo.health;
-			currentDamage = cardInfo.damage;
+            if (cardInfo)
+            {
+                currentHealth = cardInfo.health;
+                currentDamage = cardInfo.damage;
+            }
+            else
+            {
+                currentHealth = 0;
+                currentDamage = 0;
+            }
+			
 		}
 
 		private void GetComponents()
@@ -43,15 +52,19 @@ namespace Jesus.Cards
 
 		public void PopulateCard()
 		{
-			GetComponents();
+            if (cardInfo)
+            {
+                GetComponents();
 
-			nameText.text = cardInfo.name;
-			cardImage.sprite = cardInfo.image;
-			healthText.text = cardInfo.health.ToString();
-			damageText.text = cardInfo.damage.ToString();
+                nameText.text = cardInfo.name;
+                cardImage.sprite = cardInfo.image;
+                healthText.text = cardInfo.health.ToString();
+                damageText.text = cardInfo.damage.ToString();
 
-			ChangeName(cardInfo.name);
-			ChangeRarity(cardInfo.rarity);
+                ChangeName(cardInfo.name);
+                ChangeRarity(cardInfo.rarity);
+            }
+			
 		}
 
 		private void EmptyCard()
