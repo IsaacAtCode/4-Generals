@@ -109,6 +109,7 @@ namespace Jesus.Hands
 		public void ClearHand()
 		{
 			Destroy(cardInHandGO);
+            cardInHandGO = null;
 			cardInHandInfo = null;
 		}
 

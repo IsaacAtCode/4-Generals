@@ -878,7 +878,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   position: 4
-  cardInfo: {fileID: 11400000, guid: 061534a9fff53854abceb532f64b9a33, type: 2}
+  cardInfo: {fileID: 0}
   blankCard: {fileID: 998191564320488783, guid: 824be734860844e49b57f4684b75738f,
     type: 3}
   offset: 2.5
@@ -2357,7 +2357,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   position: 1
-  cardInfo: {fileID: 11400000, guid: c8fb4b1383d26974d8ad8edd3eb0ec8c, type: 2}
+  cardInfo: {fileID: 0}
   blankCard: {fileID: 998191564320488783, guid: 824be734860844e49b57f4684b75738f,
     type: 3}
   offset: 2.5
@@ -5856,7 +5856,7 @@ MonoBehaviour:
   BoardView: {fileID: 276913371}
   Enemy: {fileID: 454470173}
   Deck: {fileID: 4206982}
-  camPos: 2
+  camPos: 0
   moveTime: 0.5
 --- !u!114 &1666817452
 MonoBehaviour:

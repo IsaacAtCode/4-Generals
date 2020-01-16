@@ -6,7 +6,7 @@ using Jesus.Cards;
 
 public class GeneralSelector : MonoBehaviour
 {
-    private GeneralManager gm;
+    public GeneralManager gm;
 
     private void Awake()
     {
@@ -47,13 +47,14 @@ public class GeneralSelector : MonoBehaviour
         if (pick == 0)
         {
             gm.general = general1;
+            Debug.Log("Isaac");
+
         }
         else
         {
             gm.general = general2;
-
+            Debug.Log("Nathan");
         }
-
     }
 
 

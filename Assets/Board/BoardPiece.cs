@@ -26,6 +26,7 @@ public class BoardPiece : MonoBehaviour
 
             Card card = cardObject.AddComponent<Card>();
             card.cardInfo = cardStats;
+            cardInfo = cardStats;
             card.PopulateCard();
 
             Debug.Log("Cannot spawn - no info");
@@ -35,13 +36,12 @@ public class BoardPiece : MonoBehaviour
         {
             Debug.Log("Cannot spawn - card in front");
         }
-
-
     }
 
     public void RemoveCard()
     {
         Destroy(cardObject);
+        cardObject = null;
         cardInfo = null;
     }
 

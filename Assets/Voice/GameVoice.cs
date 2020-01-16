@@ -46,6 +46,8 @@ public class GameVoice : MonoBehaviour
         actions.Add("discard card", Discard);
 
         //select cards
+        actions.Add("place", SelectCard);
+        actions.Add("place down", SelectCard);
         actions.Add("select", SelectCard);
         actions.Add("choose", SelectCard);
         actions.Add("swap", SelectCard);

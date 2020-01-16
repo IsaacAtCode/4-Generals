@@ -30,6 +30,7 @@ public class MenuVoice : MonoBehaviour
 
         actions.Add("generals", GoToGeneral);
         actions.Add("general select", GoToGeneral);
+        actions.Add("general selection", GoToGeneral);
 
         actions.Add("play game", PlayGame);
         actions.Add("play", PlayGame);
@@ -129,12 +130,12 @@ public class MenuVoice : MonoBehaviour
 
     public void General1()
     {
-        gs.PickGeneral(1);
+        gs.PickGeneral(0);
     }
 
     public void General2()
     {
-        gs.PickGeneral(2);
+        gs.PickGeneral(1);
 
     }
 }

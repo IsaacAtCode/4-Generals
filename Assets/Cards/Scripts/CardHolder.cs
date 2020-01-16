@@ -64,9 +64,6 @@ namespace Jesus.Hands
                 selectionHand.BoardSelection();
             }
 
-
-
-
 		}
 
         //Select Card
@@ -87,20 +84,29 @@ namespace Jesus.Hands
             }
             else if (cm.camPos == CameraPosition.BoardView)
             {
-                if (selectionHand.cardInHandInfo) //If card is in the hand, swap instead
+                if (selectionHand.cardInHandInfo && selectionHand.selectedBoard.cardInfo) //If card is in the hand and card on board
                 {
                     SwapCardToBoard(selectionHand.cardInHandInfo, selectionHand.selectedBoard.cardInfo);
-
-                    board.PopulateBoard();
                 }
-                else if (!selectionHand.cardInHandInfo)
+                else if (selectionHand.cardInHandInfo && !selectionHand.selectedBoard.cardInfo) //Card in hand and none on board
+                {
+                    selectionHand.selectedBoard.SpawnCard(selectionHand.cardInHandInfo);
+
+                    selectionHand.ClearHand();
+                }
+                else if (!selectionHand.cardInHandInfo && selectionHand.selectedBoard.cardInfo) //No card in hand and card on board
                 {
                     selectionHand.ClearHand();
-                    //deckHand.RemoveCard(selectionHand.selectedCard.cardInfo);
                     selectionHand.SelectCard(selectionHand.selectedBoard.cardInfo);
 
-                    board.PopulateBoard();
+                    selectionHand.selectedBoard.RemoveCard();
                 }
+                else if (!selectionHand.cardInHandInfo && !selectionHand.selectedBoard.cardInfo) //No cards in either hand
+                {
+                    Debug.Log("no card in hand or deck");
+                }
+
+                board.PopulateBoard();
             }
 
         }
@@ -121,8 +127,8 @@ namespace Jesus.Hands
         public void SwapCardToBoard(CardSO hand, CardSO board)
         {
             selectionHand.ClearHand();
-
             selectionHand.selectedBoard.RemoveCard();
+
 
             selectionHand.SelectCard(board);
 
