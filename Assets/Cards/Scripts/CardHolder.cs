@@ -59,7 +59,7 @@ namespace Jesus.Hands
             {
                 selectionHand.DeckSelection();
             }
-            else if (cm.camPos == CameraPosition.BattleGrid)
+            else if (cm.camPos == CameraPosition.BoardView)
             {
                 selectionHand.BoardSelection();
             }
@@ -85,7 +85,7 @@ namespace Jesus.Hands
                     selectionHand.SelectCard(selectionHand.selectedCard.cardInfo);
                 }
             }
-            else if (cm.camPos == CameraPosition.BattleGrid)
+            else if (cm.camPos == CameraPosition.BoardView)
             {
                 if (selectionHand.cardInHandInfo) //If card is in the hand, swap instead
                 {
@@ -153,7 +153,7 @@ namespace Jesus.Hands
                     deckHand.RemoveCard(selectionHand.selectedCard.cardInfo);
 
                 }
-                else if (cm.camPos == CameraPosition.BattleGrid)
+                else if (cm.camPos == CameraPosition.BoardView)
                 {
                     selectionHand.selectedBoard.RemoveCard();
                 }

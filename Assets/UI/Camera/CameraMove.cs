@@ -5,7 +5,7 @@ using UnityEngine;
 public class CameraMove : MonoBehaviour
 {
 
-	public Transform BattleGrid;
+	public Transform BoardView;
 	public Transform Enemy;
 	public Transform Deck;
 
@@ -27,9 +27,9 @@ public class CameraMove : MonoBehaviour
         {
             GoToDeck();
         }
-        else if (camPos == CameraPosition.BattleGrid)
+        else if (camPos == CameraPosition.BoardView)
         {
-            GoToBattleGrid();
+            GoToBoardView();
         }
         else if (camPos == CameraPosition.Enemy)
         {
@@ -44,10 +44,10 @@ public class CameraMove : MonoBehaviour
 		camPos = CameraPosition.Deck;
 	}
 
-	public void GoToBattleGrid()
+	public void GoToBoardView()
 	{
-		StartCoroutine(LerpToPosition(moveTime, BattleGrid));
-		camPos = CameraPosition.BattleGrid;
+		StartCoroutine(LerpToPosition(moveTime, BoardView));
+		camPos = CameraPosition.BoardView;
 	}
 
 	public void GoToEnemy()
@@ -77,7 +77,7 @@ public class CameraMove : MonoBehaviour
 
 public enum CameraPosition
 {
-	BattleGrid,
+	BoardView,
 	Enemy,
 	Deck,
 }

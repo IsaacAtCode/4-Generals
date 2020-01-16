@@ -8,9 +8,6 @@ public class Board : MonoBehaviour
 	public int totalDamage = 0;
 	public int totalHealth = 0;
 
-    public int currDamage;
-    public int currHealth;
-
 	[Header("Cards")]
     public List<BoardPiece> pieces;
 
@@ -20,7 +17,7 @@ public class Board : MonoBehaviour
 
     public void PopulateBoard()
     {
-        cardsOnBoard.Clear();
+        cardsOnBoard.Clear(); 
 
         totalDamage = 0;
         totalHealth = 0;
@@ -28,27 +25,17 @@ public class Board : MonoBehaviour
         foreach (BoardPiece item in pieces)
         {
             item.SpawnCard();
-            cardsOnBoard.Add(item.cardInfo);
 
-        }
-
-        CalculateHealthAndDamage();
-    }
-
-    public void CalculateHealthAndDamage()
-    {
-        totalDamage = 0;
-        totalHealth = 0;
-
-        if (cardsOnBoard.Count > 0)
-        {
-            foreach (CardSO item in cardsOnBoard)
+            if (item.cardInfo)
             {
-                totalDamage += item.damage;
-                totalHealth += item.health;
-            } 
+                cardsOnBoard.Add(item.cardInfo);
+                totalDamage += item.cardInfo.damage;
+                totalHealth += item.cardInfo.health;
+            }
         }
     }
+
+
 
     private void Start()
     {

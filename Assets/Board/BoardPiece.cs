@@ -6,7 +6,7 @@ using Jesus.Cards;
 public class BoardPiece : MonoBehaviour
 {
     public int position;
-    public CardSO cardInfo;
+    public CardSO cardInfo = null;
     public GameObject blankCard;
     public float offset = 2.5f;
 
@@ -27,10 +27,10 @@ public class BoardPiece : MonoBehaviour
         {
             Vector3 offsetPos = new Vector3(transform.position.x, transform.position.y + offset, transform.position.z);
 
-            cardObject = Instantiate(blankCard, offsetPos, Quaternion.identity);
+            cardObject = Instantiate(blankCard, offsetPos, Quaternion.identity, transform);
 
             cardObject.transform.Rotate(180f, 180f, 0);
-            cardObject.transform.localScale = new Vector3(10f, 5, 10f);
+            cardObject.transform.localScale = new Vector3(0.1f, 1, 0.1f);
 
             Card card = cardObject.AddComponent<Card>();
             card.cardInfo = cardInfo;

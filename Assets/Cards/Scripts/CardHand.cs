@@ -21,28 +21,35 @@ namespace Jesus.Hands
 		public Card selectedCard = null;
 		public float selectedScale = 1.25f;
 		Vector3 originalSize, tempSize;
+        int deckLayerMask;
 
         [Header("Board")]
         public BoardPiece selectedBoard = null;
         public Color highlightColor;
         Material originalMaterial, tempMaterial;
         public Renderer rend;
+        int boardLayerMask;
 
 
-		[Header("Card in Hand")]
+
+        [Header("Card in Hand")]
 		public GameObject cardInHandGO;
 		public CardSO cardInHandInfo;
 		public bool inHand;
-
-		private int layer = 10;
-		private int layermask = 1 << 10;
 
 		[Header("Other")]
 		public GameObject blankCard;
 		public GameObject mainCamera;
 		public CardSO testSO;
 
-		private void Update()
+        private void Start()
+        {
+            deckLayerMask = LayerMask.GetMask("Cards");
+            boardLayerMask = LayerMask.GetMask("Board");
+        }
+
+
+        private void Update()
 		{
 			if (Input.GetKeyDown(KeyCode.Z))
 			{
@@ -122,7 +129,7 @@ namespace Jesus.Hands
 			RaycastHit hit;
 			Card currCard;
 
-			if (Physics.Raycast(indexPos.position, indexPos.forward, out hit, Mathf.Infinity) && hit.transform.CompareTag("Card"))
+			if (Physics.Raycast(indexPos.position, indexPos.forward, out hit, Mathf.Infinity, deckLayerMask) && hit.transform.CompareTag("Card"))
 			{
 				currCard = hit.transform.gameObject.GetComponent<Card>();
 
@@ -173,7 +180,7 @@ namespace Jesus.Hands
 
             Debug.DrawRay(indexPos.position, indexPos.forward * 60f, Color.blue);
 
-            if (Physics.Raycast(indexPos.position, indexPos.forward, out hit, 60f) && hit.transform.CompareTag("Board"))
+            if (Physics.Raycast(indexPos.position, indexPos.forward, out hit, 60f, boardLayerMask) && hit.transform.CompareTag("Board"))
             {
 
                 currRend = hit.collider.gameObject.GetComponent<Renderer>();

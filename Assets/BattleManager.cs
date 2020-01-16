@@ -20,6 +20,7 @@ public class BattleManager : MonoBehaviour
     public Text enemyHealthText;
     public Text enemyDamageText;
 
+    public GameObject boardCanvas;
     public Text boardHealthText;
     public Text boardDamageText;
 
@@ -53,8 +54,6 @@ public class BattleManager : MonoBehaviour
         enemyHealth = enemy.enemyInfo.health;
         enemyDamage = enemy.enemyInfo.damage;
 
-        board.CalculateHealthAndDamage();
-
         boardDamage = board.totalDamage;
         boardHealth = board.totalHealth;
 
@@ -76,6 +75,7 @@ public class BattleManager : MonoBehaviour
         if (bs == BattleState.Start)
         {
             StartBattle();
+            ShowUI();
         }
         if (bs == BattleState.Win)
         {
@@ -87,6 +87,15 @@ public class BattleManager : MonoBehaviour
         }
     }
 
+    private void HideUI()
+    {
+        boardCanvas.SetActive(false);
+    }
+
+    private void ShowUI()
+    {
+        boardCanvas.SetActive(true);
+    }
 
 
     public void StartBattle()

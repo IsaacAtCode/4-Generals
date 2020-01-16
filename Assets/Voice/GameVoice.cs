@@ -18,11 +18,9 @@ public class GameVoice : MonoBehaviour
 
     public BattleManager bm;
 
-    public void GetCardControls()
+    public void Start()
     {
-        keywordrecognizer = new KeywordRecognizer(actions.Keys.ToArray());
-        keywordrecognizer.OnPhraseRecognized += RecognizedSpeech;
-        keywordrecognizer.Start();
+
 
 
         //Card Draw
@@ -83,7 +81,14 @@ public class GameVoice : MonoBehaviour
         actions.Add("pause", PauseGame);
         actions.Add("resume", ResumeGame);
         actions.Add("main menu", BackToMainMenu);
+
+
+        keywordrecognizer = new KeywordRecognizer(actions.Keys.ToArray());
+        keywordrecognizer.OnPhraseRecognized += RecognizedSpeech;
+        keywordrecognizer.Start();
     }
+
+
 
     #region Draw
 
@@ -145,7 +150,7 @@ public class GameVoice : MonoBehaviour
 
     private void BoardView()
     {
-        cm.ChangeFocus(CameraPosition.BattleGrid);
+        cm.ChangeFocus(CameraPosition.BoardView);
     }
 
     private void EnemyView()
@@ -155,7 +160,7 @@ public class GameVoice : MonoBehaviour
 
     private void StartFight()
     {
-        bm.StartBattle();
+        bm.bs = BattleState.Start;
     }
 
     #region  Menu
