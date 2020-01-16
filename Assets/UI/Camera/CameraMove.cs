@@ -15,51 +15,23 @@ public class CameraMove : MonoBehaviour
 
 	private void Start()
 	{
-		
-		camPos = CameraPosition.Deck;
-		StartCoroutine(LerpToPosition(0, Deck));
-	}
-
-	private void Update()
-	{
-		ChangeFocus();
+        ChangeFocus();
 	}
 
 	private void ChangeFocus()
 	{
-		if (camPos == CameraPosition.BattleGrid)
-		{
-			if (Input.GetKeyDown(KeyCode.W))
-			{
-				GoToEnemy();
-			}
-			else if (Input.GetKeyDown(KeyCode.S))
-			{
-				GoToDeck();
-			}
-		}
-		else if (camPos == CameraPosition.Enemy)
-		{
-			if (Input.GetKeyDown(KeyCode.W))
-			{
-				Debug.Log("Cannot look more forward");
-			}
-			else if (Input.GetKeyDown(KeyCode.S))
-			{
-				GoToBattleGrid();
-			}
-		}
-		else if (camPos == CameraPosition.Deck)
-		{
-			if (Input.GetKeyDown(KeyCode.W))
-			{
-				GoToBattleGrid();
-			}
-			else if (Input.GetKeyDown(KeyCode.S))
-			{
-				Debug.Log("Cannot look more backward");
-			}
-		}
+        if (camPos == CameraPosition.Deck)
+        {
+            GoToDeck();
+        }
+        else if (camPos == CameraPosition.BattleGrid)
+        {
+            GoToBattleGrid();
+        }
+        else if (camPos == CameraPosition.Enemy)
+        {
+            GoToEnemy();
+        }
 
 	}
 
@@ -99,6 +71,7 @@ public class CameraMove : MonoBehaviour
 
 	}
 }
+
 public enum CameraPosition
 {
 	BattleGrid,

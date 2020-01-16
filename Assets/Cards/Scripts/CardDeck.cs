@@ -49,27 +49,30 @@ namespace Jesus.Hands
 			cardObjects = SelectCards();
 		}
 
-		private void Update()
-		{
-			if (Input.GetKeyDown(KeyCode.L))
-			{
-				DrawCards(2);
-			}
+        private void Update()
+        {
+            if (Input.GetKeyDown(KeyCode.L))
+            {
+                DrawCards(2);
+            }
 
-			if (Input.GetKeyDown(KeyCode.K))
-			{
-				RemoveCard(0);
-			}
+            if (Input.GetKeyDown(KeyCode.K))
+            {
+                RemoveCard(0);
+            }
 
 
-			if (playerDeck != null)
-			{
-				RefreshDeck();
-				RotateCards();
-			}
-			
+            if (playerDeck != null)
+            {
+                RotateCards();
 
-		}
+                if (isDirty)
+                {
+                    RefreshDeck();
+                }
+
+            }
+        }
 
 		#region Deck
 
@@ -192,12 +195,10 @@ namespace Jesus.Hands
 
 		public void RefreshDeck()
 		{
-			if (isDirty)
-			{
-				Destroy(playerDeck);
-				cardObjects = SelectCards();
-				SeperateCards();
-			}
+
+			Destroy(playerDeck);
+			cardObjects = SelectCards();
+			SeperateCards();
 
 			isDirty = false;
 		}

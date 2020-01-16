@@ -22,6 +22,13 @@ namespace Jesus.Hands
 		public float selectedScale = 1.25f;
 		Vector3 originalSize, tempSize;
 
+        [Header("Board")]
+        public BoardPiece selectedBoard = null;
+        public Color highlightColor;
+        Material originalMaterial, tempMaterial;
+        public Renderer rend;
+
+
 		[Header("Card in Hand")]
 		public GameObject cardInHandGO;
 		public CardSO cardInHandInfo;
@@ -46,16 +53,8 @@ namespace Jesus.Hands
 				ClearHand();
 			}
 
-
-			//if (cardInHandGO)
-			//{
-			//	Vector3 targetPos = mainCamera.transform.position;
-
-			//	cardInHandGO.transform.LookAt(targetPos);
-			//	cardInHandGO.transform.Rotate(-90, 0, 0);
-			//}
-
-			GetCardFromDeck();
+			//DeckSelection();
+            //BoardSelection();
 
 			if (cardInHandGO)
 			{
@@ -76,7 +75,6 @@ namespace Jesus.Hands
 				card.PopulateCard();
 
 				cardInHandInfo = cardInfo;
-
 			}
 			else
 			{
@@ -119,12 +117,10 @@ namespace Jesus.Hands
 			cardInHandInfo = null;
 		}
 
-		public void GetCardFromDeck()
+		public void DeckSelection()
 		{
 			RaycastHit hit;
 			Card currCard;
-
-			Debug.DrawRay(indexPos.position, indexPos.forward, Color.red);
 
 			if (Physics.Raycast(indexPos.position, indexPos.forward, out hit, Mathf.Infinity) && hit.transform.CompareTag("Card"))
 			{
@@ -169,6 +165,58 @@ namespace Jesus.Hands
 
 		}
 
-	}
+        public void BoardSelection()
+        {
+            RaycastHit hit;
+
+            Renderer currRend;
+
+            Debug.DrawRay(indexPos.position, indexPos.forward * 60f, Color.blue);
+
+            if (Physics.Raycast(indexPos.position, indexPos.forward, out hit, 60f) && hit.transform.CompareTag("Board"))
+            {
+
+                currRend = hit.collider.gameObject.GetComponent<Renderer>();
+
+                if (currRend == rend)
+                    return;
+
+                if (currRend && currRend != rend)
+                {
+                    if (rend)
+                    {
+                        rend.sharedMaterial = originalMaterial;
+                    }
+
+                }
+
+                if (currRend)
+                {
+                    rend = currRend;
+                }
+                else
+                {
+                    return;
+                }
+
+                originalMaterial = rend.sharedMaterial;
+
+                tempMaterial = new Material(originalMaterial);
+                rend.material = tempMaterial;
+                rend.material.color = highlightColor;
+
+                selectedBoard = rend.GetComponent<BoardPiece>();
+            }
+            else
+            {
+                if (rend)
+                {
+                    rend.sharedMaterial = originalMaterial;
+                    rend = null;
+                    selectedBoard = null;
+                }
+            }
+        }
+    }
 }
 
