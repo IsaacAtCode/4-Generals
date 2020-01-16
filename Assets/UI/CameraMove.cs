@@ -77,7 +77,8 @@ public class CameraMove : MonoBehaviour
 
 public enum CameraPosition
 {
-	BoardView,
+    Deck,
+    BoardView,
 	Enemy,
-	Deck,
+
 }

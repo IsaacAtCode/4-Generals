@@ -2620,7 +2620,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ch: {fileID: 1666817450}
-  cm: {fileID: 0}
+  cm: {fileID: 1666817451}
   bm: {fileID: 1418818660}
 --- !u!4 &780489936
 Transform:
@@ -3922,9 +3922,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   board: {fileID: 1610553960}
   enemy: {fileID: 564012237}
+  cm: {fileID: 1666817451}
   enemyHealthText: {fileID: 1542049374}
   enemyDamageText: {fileID: 1072885085}
-  boardCanvas: {fileID: 0}
+  boardCanvas: {fileID: 222137397}
   boardHealthText: {fileID: 61117624}
   boardDamageText: {fileID: 1944407936}
   resultsText: {fileID: 581624832}
@@ -5400,7 +5401,6 @@ MonoBehaviour:
   - {fileID: 446975429}
   - {fileID: 1638624237}
   cardsOnBoard: []
-  testCard: {fileID: 11400000, guid: 061534a9fff53854abceb532f64b9a33, type: 2}
 --- !u!4 &1610553961
 Transform:
   m_ObjectHideFlags: 0

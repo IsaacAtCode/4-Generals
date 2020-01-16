@@ -43,6 +43,7 @@ public class MenuVoice : MonoBehaviour
         actions.Add("isaac", General1);
         actions.Add("big guy", General1);
         actions.Add("muscle", General1);
+        actions.Add("muscles", General1);
         actions.Add("muscle man", General1);
 
 

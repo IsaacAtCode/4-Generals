@@ -10,9 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 9f4322efe70d2224eaa431ff8087f0c1, type: 3}
-  m_Name: Isaac
+  m_Name: Nathan
   m_EditorClassIdentifier: 
-  name: 
-  image: {fileID: 0}
-  buff: 0
-  buffDescription: 
+  name: Nathan
+  image: {fileID: 21300000, guid: 60f1aed648fa0b546903ba213edb05fc, type: 3}
+  buff: 1
+  buffDescription: Increases all cards health by 5

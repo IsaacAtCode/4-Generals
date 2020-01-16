@@ -51,18 +51,6 @@ namespace Jesus.Hands
 
         private void Update()
 		{
-			if (Input.GetKeyDown(KeyCode.Z))
-			{
-				SelectCard(testSO);
-			}
-			if (Input.GetKeyDown(KeyCode.P))
-			{
-				ClearHand();
-			}
-
-			//DeckSelection();
-            //BoardSelection();
-
 			if (cardInHandGO)
 			{
 				MoveCard();

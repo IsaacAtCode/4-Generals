@@ -51,17 +51,6 @@ namespace Jesus.Hands
 
         private void Update()
         {
-            if (Input.GetKeyDown(KeyCode.L))
-            {
-                DrawCards(2);
-            }
-
-            if (Input.GetKeyDown(KeyCode.K))
-            {
-                RemoveCard(0);
-            }
-
-
             if (playerDeck != null)
             {
                 RotateCards();
@@ -216,6 +205,7 @@ namespace Jesus.Hands
 			{
 				GameObject cardGO = Instantiate(blankCard, parentVector, Quaternion.identity, playerDeck.transform);
 				cardGO.tag = "Card";
+                cardGO.layer = 10;
 				cardGOs.Add(cardGO);
 				cardGO.transform.localScale = new Vector3(0.75f, 0.75f, 0.75f);
 

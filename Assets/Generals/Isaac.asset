@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9f4322efe70d2224eaa431ff8087f0c1, type: 3}
   m_Name: Isaac
   m_EditorClassIdentifier: 
-  name: 
-  image: {fileID: 0}
+  name: Isaac
+  image: {fileID: 21300000, guid: 8d1137d7ab8180d4ba9fe7ca6a9a2513, type: 3}
   buff: 0
-  buffDescription: 
+  buffDescription: Increases all cards damage by 5

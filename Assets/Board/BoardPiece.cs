@@ -12,10 +12,11 @@ public class BoardPiece : MonoBehaviour
 
     public GameObject cardObject;
 
-    public void SpawnCard()
+    public void SpawnCard(CardSO cardStats)
     {
-        if (cardInfo)
+        if (!cardObject)
         {
+
             Vector3 offsetPos = new Vector3(transform.position.x, transform.position.y + offset, transform.position.z);
 
             cardObject = Instantiate(blankCard, offsetPos, Quaternion.identity, transform);
@@ -24,13 +25,18 @@ public class BoardPiece : MonoBehaviour
             cardObject.transform.localScale = new Vector3(0.1f, 1, 0.1f);
 
             Card card = cardObject.AddComponent<Card>();
-            card.cardInfo = cardInfo;
+            card.cardInfo = cardStats;
             card.PopulateCard();
+
+            Debug.Log("Cannot spawn - no info");
+
         }
         else
         {
-            Debug.Log("Cannot spawn - no info");
+            Debug.Log("Cannot spawn - card in front");
         }
+
+
     }
 
     public void RemoveCard()

@@ -126,7 +126,7 @@ namespace Jesus.Hands
 
             selectionHand.SelectCard(board);
 
-            deckHand.AddCard(hand);
+            selectionHand.selectedBoard.SpawnCard(hand);
         }
 
         public void ReturnCard()

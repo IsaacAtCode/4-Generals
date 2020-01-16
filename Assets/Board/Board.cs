@@ -13,8 +13,6 @@ public class Board : MonoBehaviour
 
     public List<CardSO> cardsOnBoard;
 
-	public CardSO testCard;
-
     public void PopulateBoard()
     {
         cardsOnBoard.Clear(); 
@@ -24,10 +22,9 @@ public class Board : MonoBehaviour
 
         foreach (BoardPiece item in pieces)
         {
-            item.SpawnCard();
-
             if (item.cardInfo)
             {
+                item.SpawnCard(item.cardInfo);
                 cardsOnBoard.Add(item.cardInfo);
                 totalDamage += item.cardInfo.damage;
                 totalHealth += item.cardInfo.health;

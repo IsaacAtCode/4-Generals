@@ -17,6 +17,8 @@ public class BattleManager : MonoBehaviour
 
 
     [Header("UI")]
+    public CameraMove cm;
+
     public Text enemyHealthText;
     public Text enemyDamageText;
 
@@ -35,7 +37,6 @@ public class BattleManager : MonoBehaviour
     private void Start()
     {
         ClearText();
-
         resultsText.text = "";
     }
 
@@ -72,6 +73,16 @@ public class BattleManager : MonoBehaviour
 
     private void Update()
     {
+        if (cm.camPos == CameraPosition.Deck)
+        {
+            HideUI();
+        }
+        else
+        {
+            ShowUI();
+        }
+
+
         if (bs == BattleState.Start)
         {
             StartBattle();
