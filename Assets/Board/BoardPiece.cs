@@ -12,15 +12,6 @@ public class BoardPiece : MonoBehaviour
 
     public GameObject cardObject;
 
-    private void Start()
-    {
-        if (cardInfo)
-        {
-            SpawnCard();
-        }
-    }
-
-
     public void SpawnCard()
     {
         if (cardInfo)
